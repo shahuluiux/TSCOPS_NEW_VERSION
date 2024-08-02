@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSCOP</title>
+  <!-- Bootstrap CSS version 5.3.3 -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awsome Icon -->
+  <link rel="stylesheet" href="assets/fontawesome-free-6.6.0-web/css/all.min.css" />
+  <!-- Flatpickr CSS -->
+  <link href="css/flatpickr.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+  <!-- Font Family -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="css/fonts.css" rel="stylesheet">
+  <!-- Meta Tags -->
+  <link rel="icon" type="ico" href="favicon.ico">
+  <meta name="description"
+    content="TSCOP app allows police officers to access crime and criminal databases, match images of people taken during patrols and includes an integrated facial recognition system to identify criminals, unidentified bodies at crime scenes or missing children.">
+</head>
+
+<body>
+  <!-- header start -->
+  <header class="header d-flex justify-content-between align-items-center">
+    <!-- Logo -->
+    <div class="d-block">
+      <img src="assets/images-icons/tscop_main_logo.png" alt="TSCOP Main Logo">
+    </div>
+    <!-- right side data start -->
+    <div class="d-md-flex d-none px-2 justify-content-between align-items-center gap-2">
+      <figure class="d-flex justify-content-between align-items-center m-0 gap-2">
+        <figcaption class="d-flex flex-column">
+          <span class="text-light fs-5">UserName</span>
+          <span class="text-lighter fs-6">Designation</span>
+        </figcaption>
+        <img src="assets/images-icons/policeman.png" alt="user profile" width="48px" height="48px"
+          style="border-radius: 100%; border: 2px solid white;">
+      </figure>
+      <div>
+        <button class="btn btn-sm p-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-bell text-white fa-xl"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li class="notification-list truncate"><a href="/" class="notification-list-link">Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Laborum aliquam assumenda asperiores?</a></li>
+          <li class="notification-list truncate"><a href="/" class="notification-list-link">Lorem ipsum dolor sit
+              amet.</a></li>
+          <li class="notification-list truncate"><a href="/" class="notification-list-link">Lorem ipsum, dolor sit amet
+              consectetur adipisicing elit. Architecto.</a></li>
+          <li class="notification-list truncate"><a href="/" class="notification-list-link">Lorem ipsum dolor sit amet
+              consectetur, adipisicing elit.</a></li>
+        </ul>
+      </div>
+      <button class="btn btn-sm p-3" type="button" aria-label="Logout btn" data-bs-toggle="modal"
+        data-bs-target="#logout-btn">
+        <i class="fa-solid fa-power-off text-white fa-xl"></i>
+      </button>
+    </div>
+    <!-- right side data end -->
+    <!-- Logout popup start -->
+    <div class="modal fade" id="logout-btn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="logout-btnLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            Are you sure you want to logout!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            <button type="button" class="btn btn-pink">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Logout popup end -->
+  </header>
+  <!-- header start -->
+
+  <!-- Navbar contains menu toggler and user details start-->
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <!-- main menu btn start -->
+      <button class="btn btn-pink" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+        aria-controls="offcanvasScrolling"><i class="fa-solid fa-bars fa-lg"></i></button>
+      <!-- main menu btn end -->
+      <!-- Menu Data start -->
+      <div class="offcanvas offcanvas-start" data-bs-scroll="false" data-bs-backdrop="false" tabindex="-1"
+        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header btn-closed" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+          <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Close Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <li class="nav-item side-nav-item" style="border-left: 0.35rem solid #3bf707;">
+              <a href="/" class="nav-link active-side-nav-link"><i class="fa-solid fa-dashboard fa-lg"></i>
+                dashboard</a>
+            </li>
+            <li class="nav-item side-nav-item" data-bs-toggle="collapse" href="#offenders" role="button"
+              aria-expanded="false" aria-controls="offenders" style="border-left: 0.35rem solid #07ebf7;">
+              <div class="d-flex justify-content-between align-items-center nav-link">
+                <span><i class="fa-solid fa-search fa-lg"></i> login</span>
+                <i class="fa-solid fa-angle-down fa-xl pe-2"></i>
+              </div>
+              <div class="collapse" id="offenders">
+                <ul class="navbar-nav">
+                  <li class="nav-item sub-item"><a href="/login.html" class="nav-link sub-nav-link">Add Offenders</a>
+                  </li>
+                  <li class="nav-item sub-item"><a href="/login.html" class="nav-link sub-nav-link">Add Offenders</a>
+                  </li>
+                  <li class="nav-item sub-item"><a href="/login.html" class="nav-link sub-nav-link">Add Offenders</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Menu Data end -->
+
+      <!-- mobile user and logout details start -->
+      <div class="d-md-none d-block">
+        <div class="dropdown">
+          <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="assets/images-icons/policeman.png" alt="user profile" width="32px" height="32px"
+              style="border-radius: 100%; border: 2px solid #ff016b;">
+          </button>
+          <ul class="dropdown-menu">
+            <li class="mob-profile-list">
+              <figure class="d-flex justify-content-between align-items-center m-0 gap-2">
+                <figcaption class="d-flex flex-column">
+                  <span class="text-dark fs-5">UserName</span>
+                  <span class="text-lighter fs-6">Designation</span>
+                </figcaption>
+                <img src="assets/images-icons/policeman.png" alt="user profile" width="48px" height="48px"
+                  style="border-radius: 100%; border: 2px solid white;">
+              </figure>
+            </li>
+            <li class="mob-profile-list">
+              <button class="btn btn-sm" type="button" aria-label="Logout btn" data-bs-toggle="modal"
+                data-bs-target="#logout-btn">
+                <i class="fa-solid fa-power-off text-black fa-xl"></i>
+                Logout
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- mobile user and logout details start -->
+
+    </div>
+  </nav>
+  <!-- Navbar contains menu toggler and user details end-->
+
+
+  <!-- Main Section Start -->
+  <main class="container-fluid pb-4">
+    <section class="bg-white m-1 mt-3 rounded shadow-sm">
+      <h1 class="h5 p-2 bg-blue-1 text-white rounded-top">Offenders List</h1>
+      <form class="row px-4 pb-3">
+        <div class="col-md-3 col-sm-6 col-12 p-2">
+          <label for="ZoneSDPO" class="form-label">Zone/SDPO</label>
+          <select class="form-select" aria-label="Zone SDPO" id="ZoneSDPO">
+            <option selected="selected" value="">--Select--</option>
+            <option value="Bhongir">Bhongir</option>
+            <option value="L.B.Nagar">L.B.Nagar</option>
+            <option value="Maheshwaram Zone">Maheshwaram Zone</option>
+            <option value="Malkajgiri">Malkajgiri</option>
+          </select>
+        </div>
+        <div class="col-md-3 col-sm-6 col-12 p-2">
+          <label for="Division" class="form-label">Division</label>
+          <select class="form-select" aria-label="Division" id="Division">
+            <option selected="selected" value="">--Select--</option>
+            <option value="Bhongir">Bhongir</option>
+            <option value="L.B.Nagar">L.B.Nagar</option>
+            <option value="Maheshwaram Zone">Maheshwaram Zone</option>
+            <option value="Malkajgiri">Malkajgiri</option>
+          </select>
+        </div>
+        <div class="col-md-3 col-sm-6 col-12 p-2">
+          <label for="PoliceStation" class="form-label">Police Station</label>
+          <select class="form-select" aria-label="Police Station" id="PoliceStation">
+            <option selected="selected" value="">--Select--</option>
+            <option value="Bhongir">Bhongir</option>
+            <option value="L.B.Nagar">L.B.Nagar</option>
+            <option value="Maheshwaram Zone">Maheshwaram Zone</option>
+            <option value="Malkajgiri">Malkajgiri</option>
+          </select>
+        </div>
+        <div class="col-md-3 col-sm-6 col-12 p-2">
+          <label for="OffenderName" class="form-label">Offender Name</label>
+          <input type="text" class="form-control" aria-label="Offender Name" id="OffenderName"
+            placeholder="Offender Name">
+        </div>
+        <div class="col-md-3 col-sm-6 col-12 p-2">
+          <label for="moType" class="form-label">MO Type</label>
+          <select class="form-select" aria-label="MO Type" id="moType">
+            <option selected="selected" value="">--Select--</option>
+            <option value="Bhongir">Bhongir</option>
+            <option value="L.B.Nagar">L.B.Nagar</option>
+            <option value="Maheshwaram Zone">Maheshwaram Zone</option>
+            <option value="Malkajgiri">Malkajgiri</option>
+          </select>
+        </div>
+        <div class="col-md-3 col-sm-6 col-12 p-2">
+          <label for="fromdatepicker" class="form-label">From Date</label>
+          <div class="input-group">
+            <input type="text" class="form-control flatpickr-input" id="fromdatepicker" placeholder="Pick a From Date"
+              aria-label="From Date" id="fromDate">
+            <span class="input-group-text">
+              <i class="fas fa-calendar-alt"></i>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-12 p-2">
+          <label for="todatepicker" class="form-label">To Date</label>
+          <div class="input-group">
+            <input type="text" class="form-control flatpickr-input" id="todatepicker" placeholder="Pick a to Date"
+              aria-label="To Date" id="toDate">
+            <span class="input-group-text">
+              <i class="fas fa-calendar-alt"></i>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-12 p-2 d-flex align-items-end flex-grow-1">
+          <button type="button" class="btn btn-blue btn-full">Search</button>
+        </div>
+      </form>
+    </section>
+    <section class="bg-white m-1 mt-3 rounded shadow-sm p-1">
+      <!-- Filter and Table Container -->
+      <div
+        class="d-flex justify-content-between align-items-center px-2 pt-1 mb-3 flex-column flex-sm-row gap-2 gap-sm-0">
+        <!-- Rows per page filter -->
+        <div class="d-flex justify-content-center align-items-baseline gap-2">
+          <label for="rowsPerPage" class="form-label">Rows per page:</label>
+          <select id="rowsPerPage" class="form-select" style="width: auto;">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+          </select>
+        </div>
+        <div class="d-flex gap-2 align-items-center">
+          <button type="button" class="btn btn-pink">Reste LatLangs</button>
+          <p>Total Count: <span><b>1234</b></span></p>
+        </div>
+      </div>
+      <!-- Table -->
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">District</th>
+              <th scope="col">Police Station</th>
+              <th scope="col">Offender Name</th>
+              <th scope="col">ALIASES</th>
+              <th scope="col">Age</th>
+              <th scope="col">MOBILE NO</th>
+              <th scope="col">PRESENT ADDRESS</th>
+              <th scope="col">PS ARRESTED</th>
+              <th scope="col">DATE OF LAST ARREST</th>
+              <th scope="col">Latitude</th>
+              <th scope="col">Longitude</th>
+              <th scope="col">Image</th>
+              <th scope="col">GeoTag Status</th>
+              <th scope="col">Update</th>
+              <th scope="col">Last Visiting Remarks</th>
+              <th scope="col">Last Visited Date</th>
+              <th scope="col">Checked By</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Example rows -->
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+      <!-- Pagination -->
+      <div class="d-flex justify-content-end pe-2">
+        <nav aria-label="Page navigation">
+          <ul class="pagination" id="paginationControls">
+            <!-- Pagination controls will be dynamically generated here -->
+          </ul>
+        </nav>
+      </div>
+    </section>
+  </main>
+  <!-- Main Section End -->
+
+
+  <!-- Popper version 2.11.8 -->
+  <script src="js/popper.min.js"></script>
+  <!-- Bootstrap JS version 5.3.3 -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Flatpickr JS -->
+  <script src="js/flatpickr.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSCOP</title>
+  <!-- Bootstrap CSS version 5.3.3 -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awsome Icon -->
+  <link rel="stylesheet" href="assets/fontawesome-free-6.6.0-web/css/all.min.css" />
+  <!-- Flatpickr CSS -->
+  <link href="css/flatpickr.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+  <!-- Font Family -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="css/fonts.css" rel="stylesheet">
+  <!-- Meta Tags -->
+  <link rel="icon" type="ico" href="favicon.ico">
+  <meta name="description"
+    content="TSCOP app allows police officers to access crime and criminal databases, match images of people taken during patrols and includes an integrated facial recognition system to identify criminals, unidentified bodies at crime scenes or missing children.">
+</head>
+
+<body class="login-body">
+
+  <!-- Login Header -->
+  <header class="login-header d-flex justify-content-center align-items-center">
+    <img src="assets/images-icons/tscop_logo.png" alt="TSCOP Logo" width="96px" height="96" />
+  </header>
+
+  <main class="login-main p-2 d-flex justify-content-center align-items-center">
+    <div class="login-container">
+      <form action="" class="row px-2 gap-4">
+        <div class="input-group flex-nowrap col-12">
+          <span class="input-group-text" id="addon-wrapping">
+            <i class="fa-solid fa-user"></i>
+          </span>
+          <input type="text" class="form-control" placeholder="User Name" aria-label="User Name"
+            aria-describedby="addon-wrapping" autocomplete="off" required>
+        </div>
+        <div class="input-group flex-nowrap col-12">
+          <span class="input-group-text" id="addon-wrapping">
+            <i class="fa-solid fa-lock"></i>
+          </span>
+          <input type="password" class="form-control" placeholder="Password" aria-label="Password"
+            aria-describedby="addon-wrapping" autocomplete="off" required>
+        </div>
+        <section class="d-flex gap-3 align-items-center">
+          <div>
+            <input type="text" class="form-control text-center text-decoration-line-through" type="text"
+              placeholder="7Xac2n" aria-label="captcha" disabled style="font-weight: 500; letter-spacing: 3px;">
+          </div>
+          <div>
+            <button type="button" class="btn"><i class="fa-solid fa-arrows-rotate fa-2xl"></i></button>
+          </div>
+          <div>
+            <input class="form-control" type="text" placeholder="Captcha" aria-label="captcha" autocomplete="off"
+              required>
+          </div>
+        </section>
+        <div class="d-grid">
+          <button class="btn btn-pink" type="button">Button</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="bg-white py-2">
+    <div class="row container mx-auto">
+      <div class="col-md-4 d-md-none d-block text-center">
+        <img src="assets/images-icons/Telangana_Police_Logo.png" alt="ts-police-logo" width="80">
+      </div>
+      <div class="col-md-4 col-12">
+        <p class="text-center mb-0 py-2">
+          <span>Powered by</span>
+          <br>
+          <span class="login-link"><a href="/">Hyderabadpolice.cgg.gov.in</a></span>
+        </p>
+      </div>
+      <div class="col-md-4 d-none d-md-block position-relative" style="height: 68px;">
+        <img src="assets/images-icons/Telangana_Police_Logo.png" alt="ts-police-logo" width="80" class="footer-img">
+      </div>
+      <div class="col-md-4 col-12">
+        <p class="text-center mb-0 py-2">
+          <span>Technology Partner</span>
+          <br>
+          <span class="login-link"><a href="/">Winc IT Services</a></span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main Section End -->
+
+  <!-- Popper version 2.11.8 -->
+  <script src="js/popper.min.js"></script>
+  <!-- Bootstrap JS version 5.3.3 -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Flatpickr JS -->
+  <script src="js/flatpickr.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
