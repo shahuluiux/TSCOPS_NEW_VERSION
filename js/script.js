@@ -1,18 +1,20 @@
 // Date Picker Script Code Start
 
 document.addEventListener('DOMContentLoaded', function () {
-  flatpickr('#datepicker', {
-    dateFormat: 'd-m-Y' // Customize the date format as needed
-  });
-  flatpickr('#fromdatepicker', {
-    dateFormat: 'd-m-Y' // Customize the date format as needed
-  });
-  flatpickr('#todatepicker', {
-    dateFormat: 'd-m-Y' // Customize the date format as needed
-  });
+  const datePickers = [
+    '#datepicker',
+    '#fromdatepicker',
+    '#todatepicker',
+    '#dobdatepicker',
+    '#DateOfArrestdatepicker',
+    '#DateOfReleasedatepicker',
+    '#arresteddatepicker'
+  ];
 
-  flatpickr('#dobdatepicker', {
-    dateFormat: 'd-m-Y' // Customize the date format as needed
+  datePickers.forEach(selector => {
+    flatpickr(selector, {
+      dateFormat: 'd-m-Y' // Customize the date format as needed
+    });
   });
 });
 

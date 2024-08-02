@@ -1,6 +1,7 @@
 :root {
   --pink: #f70763;
   --pink-hover: #d3165f;
+  --danger-light: #ffbebe;
   --blue-200: #4e9acc;
   --gray: #eeeeee;
   --grdient-c1: #99d5f4;
@@ -219,6 +220,9 @@ li.side-nav-item {
   width: 100%;
 }
 
+.bg-danger-light {
+  background: var(--danger-light);
+}
 
 
 
@@ -462,4 +466,20 @@ td {
 
 ::placeholder {
   font-size: .85rem;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.fs-7 {
+  font-size: .8rem !important
 }
