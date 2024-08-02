@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
   flatpickr('#todatepicker', {
     dateFormat: 'd-m-Y' // Customize the date format as needed
   });
+
+  flatpickr('#dobdatepicker', {
+    dateFormat: 'd-m-Y' // Customize the date format as needed
+  });
 });
 
 // Date Picker Script Code End

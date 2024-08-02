@@ -6,6 +6,7 @@
   --grdient-c1: #99d5f4;
   --grdient-c2: #1c76bb;
   --grdient-c3: #116aae;
+  --grdient-c4: #1a74ba;
   --login-link: #337ab7;
   --white: #ffffff;
   --white-50: #c0c0c0;
@@ -128,7 +129,7 @@ body {
 .header {
   width: 100%;
   height: 85px;
-  background: linear-gradient(to left, var(--grdient-c2), var(--grdient-c3));
+  background: linear-gradient(to left, var(--grdient-c2), var(--grdient-c4));
   border-bottom: .3rem solid var(--pink-hover);
 }
 
@@ -444,4 +445,21 @@ td {
 
 .form-label {
   margin-bottom: 0;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: var(--white);
+  background-color: var(--pink);
+  border-color: var(--bs-nav-tabs-link-active-border-color);
+  font-size: 12px;
+}
+
+.nav-link {
+  color: var(--grdient-c3);
+  font-size: 13px;
+}
+
+::placeholder {
+  font-size: .85rem;
 }
