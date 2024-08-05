@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSCOP</title>
+  <!-- Bootstrap CSS version 5.3.3 -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awsome Icon -->
+  <link rel="stylesheet" href="assets/fontawesome-free-6.6.0-web/css/all.min.css" />
+  <!-- Flatpickr CSS -->
+  <link href="css/flatpickr.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+  <!-- Font Family -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="css/fonts.css" rel="stylesheet">
+  <!-- Meta Tags -->
+  <link rel="icon" type="ico" href="favicon.ico">
+  <meta name="description"
+    content="TSCOP app allows police officers to access crime and criminal databases, match images of people taken during patrols and includes an integrated facial recognition system to identify criminals, unidentified bodies at crime scenes or missing children.">
+</head>
+
+<body>
+  <!-- header start -->
+  <header class="header d-flex justify-content-between align-items-center">
+    <!-- Logo -->
+    <div class="d-block">
+      <img src="assets/images-icons/tscop_main_logo.png" alt="TSCOP Main Logo">
+    </div>
+    <!-- right side data start -->
+    <div class="d-md-flex d-none px-2 justify-content-between align-items-center gap-2">
+      <figure class="d-flex justify-content-between align-items-center m-0 gap-2">
+        <figcaption class="d-flex flex-column">
+          <span class="text-light fs-5">UserName</span>
+          <span class="text-lighter fs-6">Designation</span>
+        </figcaption>
+        <img src="assets/images-icons/policeman.png" alt="user profile" width="48px" height="48px"
+          style="border-radius: 100%; border: 2px solid white;">
+      </figure>
+      <div>
+        <button class="btn btn-sm p-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-bell text-white fa-xl"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li class="notification-list truncate"><a href="/" class="notification-list-link">Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Laborum aliquam assumenda asperiores?</a></li>
+          <li class="notification-list truncate"><a href="/" class="notification-list-link">Lorem ipsum dolor sit
+              amet.</a></li>
+          <li class="notification-list truncate"><a href="/" class="notification-list-link">Lorem ipsum, dolor sit amet
+              consectetur adipisicing elit. Architecto.</a></li>
+          <li class="notification-list truncate"><a href="/" class="notification-list-link">Lorem ipsum dolor sit amet
+              consectetur, adipisicing elit.</a></li>
+        </ul>
+      </div>
+      <button class="btn btn-sm p-3" type="button" aria-label="Logout btn" data-bs-toggle="modal"
+        data-bs-target="#logout-btn">
+        <i class="fa-solid fa-power-off text-white fa-xl"></i>
+      </button>
+    </div>
+    <!-- right side data end -->
+    <!-- Logout popup start -->
+    <div class="modal fade" id="logout-btn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="logout-btnLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            Are you sure you want to logout!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            <button type="button" class="btn btn-pink">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Logout popup end -->
+  </header>
+
+
+  <!-- Main Section Start -->
+  <main class="container-fluid pb-4">
+    <section class="bg-white m-1 mt-3 rounded shadow-sm">
+      <h1 class="h5 p-2 bg-blue-1 text-white rounded-top text-center">Dail 100 Dashboard</h1>
+      <section class="row p-2">
+        <div class="col-md-3 col-sm-6 col-12 pb-3">
+          <select class="form-select" aria-label="Default select example">
+            <option selected value="today">Today</option>
+            <option value="lastWeek">Last Week</option>
+            <option value="oneMonth">One Month</option>
+            <option value="customDates">Custom Date</option>
+          </select>
+        </div>
+        <div class="col-md-3 col-sm-6 col-12 pb-3">
+          <div class="input-group">
+            <input type="text" class="form-control rounded-start" id="fromdatepicker" placeholder="Pick a From Date">
+            <span class="input-group-text">
+              <i class="fas fa-calendar-alt"></i>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-12 pb-3">
+          <div class="input-group">
+            <input type="text" class="form-control rounded-start" id="todatepicker" placeholder="Pick a To Date">
+            <span class="input-group-text">
+              <i class="fas fa-calendar-alt"></i>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-12">
+          <button class="btn btn-blue btn-full" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Submit</button>
+        </div>
+      </section>
+      <section class="m-1 mt-3 border-bottom border-top">
+        <ul class="nav">
+          <li class="nav-item"><a href="/" class="nav-link active" target="_blank">Map View</a></li>
+          <li class="nav-item"><a href="/" class="nav-link active" target="_blank">Dial100 Call Data</a></li>
+          <li class="nav-item"><a href="/" class="nav-link active" target="_blank">Pending Calls</a></li>
+          <li class="nav-item"><a href="/" class="nav-link active" target="_blank">Abstract Summary</a></li>
+          <li class="nav-item"><a href="/" class="nav-link active" target="_blank">Incident Search</a></li>
+          <li class="nav-item"><a href="/" class="nav-link active" target="_blank">Diall100 Vehicles
+              Active/In-Active</a>
+          </li>
+          <li class="nav-item"><a href="/" class="nav-link active" target="_blank">Dial100 DSR</a></li>
+        </ul>
+      </section>
+      <section class="row m-1 mt-3">
+        <!-- Pending VS Closed -->
+        <div class="col-md-6 col-12 px-3 py-2">
+          <div class="bg-white rounded-bottom shadow-sm border">
+            <div class="d-flex justify-content-between align-items-center text-white px-2 py-2 rounded-top bg-danger">
+              <span class="h7">Pending vs Closed</span>
+              <a href="/" class="text-white">View Details</a>
+            </div>
+            <div class="p-3">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="zone-tab" data-bs-toggle="tab" href="#zone" role="tab"
+                    aria-controls="zone" aria-selected="true">Zone</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="division-tab" data-bs-toggle="tab" href="#division" role="tab"
+                    aria-controls="division" aria-selected="true">Division</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="policeStation-tab" data-bs-toggle="tab" href="#policeStation" role="tab"
+                    aria-controls="policeStation" aria-selected="true">Police Station</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="vehicle-tab" data-bs-toggle="tab" href="#vehicle" role="tab"
+                    aria-controls="vehicle" aria-selected="true">vehicle</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <!-- Zone Tab -->
+                <div class="tab-pane fade show active" id="zone" role="tabpanel" aria-labelledby="zone-tab">
+                  <div class="table-responsive" style="height: 200px;">
+                    <table class="table mb-0">
+                      <thead>
+                        <tr>
+                          <th>Zone</th>
+                          <th>Pending at PC</th>
+                          <th>Pending at SHO</th>
+                          <th>Closed</th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Bhongir</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">L.B.Nagar</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Maheshwaram
+                              Zone</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Malkajgiri</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- division Tab -->
+                <div class="tab-pane fade show" id="division" role="tabpanel" aria-labelledby="division-tab">
+                  <div class="table-responsive" style="height: 200px;">
+                    <table class="table mb-0">
+                      <thead>
+                        <tr>
+                          <th>Division</th>
+                          <th>Pending at PC</th>
+                          <th>Pending at SHO</th>
+                          <th>Closed</th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Bhongir
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Choutuppal
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Yadadri
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">L.B.Nagar
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Vanasthalipuram
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Ibrahimpatnam
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Maheshwaram
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Kusaiguda
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Malkajgiri
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- policeStation Tab -->
+                <div class="tab-pane fade" id="policeStation" role="tabpanel" aria-labelledby="policeStation-tab">
+                  <div class="table-responsive" style="height: 200px;">
+                    <table class="table mb-0">
+                      <thead>
+                        <tr>
+                          <th>Police Station</th>
+                          <th>Pending at PC</th>
+                          <th>Pending at SHO</th>
+                          <th>Closed</th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Bhongir</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">L.B.Nagar</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Maheshwaram
+                              Zone</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Malkajgiri</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- vehicle Tab -->
+                <div class="tab-pane fade" id="vehicle" role="tabpanel" aria-labelledby="vehicle-tab">
+                  <div class="table-responsive" style="height: 200px;">
+                    <table class="table mb-0">
+                      <thead>
+                        <tr>
+                          <th>Police Station</th>
+                          <th>Pending at PC</th>
+                          <th>Pending at SHO</th>
+                          <th>Closed</th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Bhongir</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">L.B.Nagar</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Maheshwaram
+                              Zone</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Malkajgiri</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Engage VS Free -->
+        <div class="col-md-6 col-12 px-3 py-2">
+          <div class="bg-white rounded-bottom shadow-sm border">
+            <div class="d-flex justify-content-between align-items-center text-white px-2 py-2 rounded-top bg-danger">
+              <span class="h7">Engage VS Free</span>
+            </div>
+            <div class="p-3">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="engZone-tab" data-bs-toggle="tab" href="#engZone" role="tab"
+                    aria-controls="engZone" aria-selected="true">Zone</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="engDivision-tab" data-bs-toggle="tab" href="#engDivision" role="tab"
+                    aria-controls="engDivision" aria-selected="true">Division</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="engPoliceStation-tab" data-bs-toggle="tab" href="#engPoliceStation" role="tab"
+                    aria-controls="engPoliceStation" aria-selected="true">Police Station</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="engVehicle-tab" data-bs-toggle="tab" href="#engVehicle" role="tab"
+                    aria-controls="engVehicle" aria-selected="true">vehicle</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <!-- Zone Tab -->
+                <div class="tab-pane fade show active" id="engZone" role="tabpanel" aria-labelledby="engZone-tab">
+                  <div class="table-responsive" style="height: 200px;">
+                    <table class="table mb-0">
+                      <thead>
+                        <tr>
+                          <th>Zone</th>
+                          <th>Pending at PC</th>
+                          <th>Pending at SHO</th>
+                          <th>Closed</th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Bhongir</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">L.B.Nagar</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Maheshwaram
+                              Zone</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Malkajgiri</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- division Tab -->
+                <div class="tab-pane fade show" id="engDivision" role="tabpanel" aria-labelledby="engDivision-tab">
+                  <div class="table-responsive" style="height: 200px;">
+                    <table class="table mb-0">
+                      <thead>
+                        <tr>
+                          <th>Division</th>
+                          <th>Pending at PC</th>
+                          <th>Pending at SHO</th>
+                          <th>Closed</th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Bhongir
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Choutuppal
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Yadadri
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">L.B.Nagar
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Vanasthalipuram
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Ibrahimpatnam
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Maheshwaram
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Kusaiguda
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Malkajgiri
+                              Division</a>
+                          </th>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- policeStation Tab -->
+                <div class="tab-pane fade" id="engPoliceStation" role="tabpanel" aria-labelledby="engPoliceStation-tab">
+                  <div class="table-responsive" style="height: 200px;">
+                    <table class="table mb-0">
+                      <thead>
+                        <tr>
+                          <th>Police Station</th>
+                          <th>Pending at PC</th>
+                          <th>Pending at SHO</th>
+                          <th>Closed</th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Bhongir</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">L.B.Nagar</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Maheshwaram
+                              Zone</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Malkajgiri</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- vehicle Tab -->
+                <div class="tab-pane fade" id="engVehicle" role="tabpanel" aria-labelledby="engVehicle-tab">
+                  <div class="table-responsive" style="height: 200px;">
+                    <table class="table mb-0">
+                      <thead>
+                        <tr>
+                          <th>Police Station</th>
+                          <th>Pending at PC</th>
+                          <th>Pending at SHO</th>
+                          <th>Closed</th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Bhongir</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">L.B.Nagar</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Maheshwaram
+                              Zone</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <a href="/" class="common-link">Malkajgiri</a>
+                          </th>
+                          <td class="text-center">
+                            0
+                          </td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                          <td class="text-center">0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </section>
+  </main>
+  <!-- Main Section End -->
+
+
+  <!-- Popper version 2.11.8 -->
+  <script src="js/popper.min.js"></script>
+  <!-- Bootstrap JS version 5.3.3 -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Flatpickr JS -->
+  <script src="js/flatpickr.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>

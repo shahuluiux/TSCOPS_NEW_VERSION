@@ -162,6 +162,11 @@ li.side-nav-item {
   box-shadow: 0 0 1px #444444;
 }
 
+.nav-link {
+  color: var(--grdient-c3);
+  font-size: 13px;
+}
+
 .active-side-nav-link,
 .nav-link:hover {
   background: #e23177;
@@ -459,11 +464,6 @@ td {
   font-size: 12px;
 }
 
-.nav-link {
-  color: var(--grdient-c3);
-  font-size: 13px;
-}
-
 ::placeholder {
   font-size: .85rem;
 }
@@ -482,4 +482,14 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .fs-7 {
   font-size: .8rem !important
+}
+
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
 }
