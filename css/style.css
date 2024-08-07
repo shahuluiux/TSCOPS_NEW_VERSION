@@ -89,14 +89,17 @@ body {
 }
 
 .login-header {
-  height: 140px;
+  height: 160px;
   background: var(--gray);
   border-bottom: 7px solid var(--pink);
 }
 
-.login-main,
+.login-main {
+  height: 360px;
+}
+
 .otp-main {
-  height: 440px;
+  height: 430px;
 }
 
 .login-container {
@@ -104,11 +107,6 @@ body {
   width: 100%;
 }
 
-.footer-img {
-  position: absolute;
-  bottom: 0;
-  left: 35%;
-}
 
 .login-link {
   color: var(--login-link);
