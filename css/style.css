@@ -129,7 +129,7 @@ body {
 
 .header {
   width: 100%;
-  height: 85px;
+  height: 76px;
   background: linear-gradient(to left, var(--grdient-c2), var(--grdient-c4));
   border-bottom: .3rem solid var(--pink-hover);
 }
@@ -174,7 +174,7 @@ li.side-nav-item {
 }
 
 .sub-nav-link {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .sub-item {
@@ -343,9 +343,9 @@ li.side-nav-item {
 }
 
 .offcanvas.offcanvas-start {
-  top: 86px;
+  top: 76px;
   left: 0;
-  width: 280px;
+  width: 260px;
   border-right: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
   transform: translateX(-100%);
 }
@@ -444,8 +444,7 @@ td {
 table,
 th,
 td {
-  border: 1px solid #ddd;
-  /* Border color for table, header, and cells */
+  border: none;
 }
 
 .modal-footer {
