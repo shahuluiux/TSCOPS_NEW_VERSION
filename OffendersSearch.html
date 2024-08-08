@@ -5,32 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TSCOP</title>
-  <!-- Bootstrap CSS version 5.3.3 -->
+  <!-- Bootstrap CSS for styling -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awsome Icon -->
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="assets/fontawesome-free-6.6.0-web/css/all.min.css" />
-  <!-- Flatpickr CSS -->
+  <!-- Flatpickr CSS for date picker -->
   <link href="css/flatpickr.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
+  <!-- Custom CSS for additional styling -->
   <link href="css/style.css" rel="stylesheet">
-  <!-- Font Family -->
+  <!-- Google Fonts preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Custom font styles -->
   <link href="css/fonts.css" rel="stylesheet">
-  <!-- Meta Tags -->
+  <!-- Favicon for the website -->
   <link rel="icon" type="ico" href="favicon.ico">
+  <!-- Meta description for SEO -->
   <meta name="description"
     content="TSCOP app allows police officers to access crime and criminal databases, match images of people taken during patrols and includes an integrated facial recognition system to identify criminals, unidentified bodies at crime scenes or missing children.">
 </head>
 
 <body>
-  <!-- header start -->
   <header class="header d-flex justify-content-between align-items-center">
-    <!-- Logo -->
     <div class="d-block">
-      <img src="assets/images-icons/tscop_main_logo.png" alt="TSCOP Main Logo">
+      <a href="/">
+        <img src="assets/images-icons/tscop_main_logo.png" alt="TSCOP Main Logo" width="300px">
+      </a>
     </div>
-    <!-- right side data start -->
     <div class="d-md-flex d-none px-2 justify-content-between align-items-center gap-2">
       <figure class="d-flex justify-content-between align-items-center m-0 gap-2">
         <figcaption class="d-flex flex-column">
@@ -60,8 +61,6 @@
         <i class="fa-solid fa-power-off text-white fa-xl"></i>
       </button>
     </div>
-    <!-- right side data end -->
-    <!-- Logout popup start -->
     <div class="modal fade" id="logout-btn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="logout-btnLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -76,18 +75,12 @@
         </div>
       </div>
     </div>
-    <!-- Logout popup end -->
   </header>
-  <!-- header start -->
-
-  <!-- Navbar contains menu toggler and user details start-->
+  <!-- Side Navbar Start -->
   <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-      <!-- main menu btn start -->
       <button class="btn btn-pink" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
         aria-controls="offcanvasScrolling"><i class="fa-solid fa-bars fa-lg"></i></button>
-      <!-- main menu btn end -->
-      <!-- Menu Data start -->
       <div class="offcanvas offcanvas-start" data-bs-scroll="false" data-bs-backdrop="false" tabindex="-1"
         id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
         <div class="offcanvas-header btn-closed" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -96,33 +89,323 @@
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav">
-            <li class="nav-item side-nav-item" style="border-left: 0.35rem solid #3bf707;">
-              <a href="/" class="nav-link active-side-nav-link"><i class="fa-solid fa-dashboard fa-lg"></i>
-                dashboard</a>
+            <!-- Dashboard -->
+            <li class="nav-item side-nav-item" style="border-left: 0.35rem solid #ceff52;">
+              <a href="/Dashboard.html" class="nav-link">
+                <i class="fa-solid fa-dashboard fa-lg"></i>
+                <span>dashboard</span>
+              </a>
             </li>
+            <!-- Offenders -->
             <li class="nav-item side-nav-item" data-bs-toggle="collapse" href="#offenders" role="button"
               aria-expanded="false" aria-controls="offenders" style="border-left: 0.35rem solid #07ebf7;">
-              <div class="d-flex justify-content-between align-items-center nav-link">
-                <span><i class="fa-solid fa-search fa-lg"></i> login</span>
+              <div class="d-flex justify-content-between align-items-center nav-link active-side-nav-link">
+                <span><i class="fa-solid fa-user-secret fa-lg"></i> Offenders</span>
                 <i class="fa-solid fa-angle-down fa-xl pe-2"></i>
               </div>
               <div class="collapse" id="offenders">
                 <ul class="navbar-nav">
-                  <li class="nav-item sub-item"><a href="/login.html" class="nav-link sub-nav-link">Add Offenders</a>
+                  <li class="nav-item sub-item">
+                    <a href="/AddOffenders.html" class="nav-link sub-nav-link">
+                      <span>Add Offenders</span>
+                    </a>
                   </li>
-                  <li class="nav-item sub-item"><a href="/login.html" class="nav-link sub-nav-link">Add Offenders</a>
+                  <li class="nav-item sub-item">
+                    <a href="/OffendersSearch.html" class="nav-link sub-nav-link  active-sub-nav-link">
+                      <span>Offenders Search</span>
+                    </a>
                   </li>
-                  <li class="nav-item sub-item"><a href="/login.html" class="nav-link sub-nav-link">Add Offenders</a>
+                  <li class="nav-item sub-item">
+                    <a href="/OffendersList.html" class="nav-link sub-nav-link">
+                      <span>Offenders List</span>
+                    </a>
+                  </li>
+                  <li class="nav-item sub-item">
+                    <a href="/OffendersTargetDashboard.html" class="nav-link sub-nav-link">
+                      <span>Offenders Target Dashboard</span>
+                    </a>
                   </li>
                 </ul>
               </div>
             </li>
+            <!-- Rowdy Sheeters -->
+            <li class="nav-item side-nav-item" data-bs-toggle="collapse" href="#rowdySheeters" role="button"
+              aria-expanded="false" aria-controls="rowdySheeters" style="border-left: 0.35rem solid #487b02;">
+              <div class="d-flex justify-content-between align-items-center nav-link">
+                <span><i class="fa-solid fa-sheet-plastic fa-lg"></i> Rowdy Sheeters</span>
+                <i class="fa-solid fa-angle-down fa-xl pe-2"></i>
+              </div>
+              <div class="collapse" id="rowdySheeters">
+                <ul class="navbar-nav">
+                  <li class="nav-item sub-item">
+                    <a href="/RowdySheetersSearch.html" class="nav-link sub-nav-link">
+                      <span>RowdySheeters Search</span>
+                    </a>
+                  </li>
+                  <li class="nav-item sub-item">
+                    <a href="/RowdySheetersMapView.html" class="nav-link sub-nav-link">
+                      <span>RowdySheeters MapView</span>
+                    </a>
+                  </li>
+                  <li class="nav-item sub-item">
+                    <a href="/RowdySheetersList.html" class="nav-link sub-nav-link">
+                      <span>RowdySheeters List</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <!-- PDAct -->
+            <li class="nav-item side-nav-item" data-bs-toggle="collapse" href="#PDAct" role="button"
+              aria-expanded="false" aria-controls="PDAct" style="border-left: 0.35rem solid #f707ef;">
+              <div class="d-flex justify-content-between align-items-center nav-link">
+                <span><i class="fa-solid fa-gavel fa-lg"></i> PDAct</span>
+                <i class="fa-solid fa-angle-down fa-xl pe-2"></i>
+              </div>
+              <div class="collapse" id="PDAct">
+                <ul class="navbar-nav">
+                  <li class="nav-item sub-item">
+                    <a href="/AddPDAct.html" class="nav-link sub-nav-link">
+                      <span>Add PDAct</span>
+                    </a>
+                  </li>
+                  <li class="nav-item sub-item">
+                    <a href="/PDActList.html" class="nav-link sub-nav-link">
+                      <span>PDAct List</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <!-- Gun License -->
+            <li class="nav-item side-nav-item" data-bs-toggle="collapse" href="#GunLicense" role="button"
+              aria-expanded="false" aria-controls="GunLicense" style="border-left: 0.35rem solid #6f07f7;">
+              <div class="d-flex justify-content-between align-items-center nav-link">
+                <span><i class="fa-solid fa-id-card fa-lg"></i> Gun License</span>
+                <i class="fa-solid fa-angle-down fa-xl pe-2"></i>
+              </div>
+              <div class="collapse" id="GunLicense">
+                <ul class="navbar-nav">
+                  <li class="nav-item sub-item">
+                    <a href="/AddGunLicense.html" class="nav-link sub-nav-link">
+                      <span>Add GunLicense</span>
+                    </a>
+                  </li>
+                  <li class="nav-item sub-item">
+                    <a href="/GunLicenseList.html" class="nav-link sub-nav-link">
+                      <span>GunLicense List</span>
+                    </a>
+                  </li>
+                  <li class="nav-item sub-item">
+                    <a href="/GunLicenseReport.html" class="nav-link sub-nav-link">
+                      <span>GunLicense Report</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <!-- Important Contacts -->
+            <li class="nav-item side-nav-item" data-bs-toggle="collapse" href="#ImportantContacts" role="button"
+              aria-expanded="false" aria-controls="ImportantContacts" style="border-left: 0.35rem solid #f78f07;">
+              <div class="d-flex justify-content-between align-items-center nav-link">
+                <span><i class="fa-solid fa-address-book fa-lg"></i> Important Contacts</span>
+                <i class="fa-solid fa-angle-down fa-xl pe-2"></i>
+              </div>
+              <div class="collapse" id="ImportantContacts">
+                <ul class="navbar-nav">
+                  <li class="nav-item sub-item">
+                    <a href="/AddImpContacts.html" class="nav-link sub-nav-link">
+                      <span>Add Imp.Contacts</span>
+                    </a>
+                  </li>
+                  <li class="nav-item sub-item">
+                    <a href="/ImpContactsList.html" class="nav-link sub-nav-link">
+                      <span>Imp.Contacts List</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <!-- Reports -->
+            <li class="nav-item side-nav-item" data-bs-toggle="collapse" href="#Reports" role="button"
+              aria-expanded="false" aria-controls="Reports" style="border-left: 0.35rem solid #f70727;">
+              <div class="d-flex justify-content-between align-items-center nav-link">
+                <span><i class="fa-solid fa-file-lines fa-lg"></i> Reports</span>
+                <i class="fa-solid fa-angle-down fa-xl pe-2"></i>
+              </div>
+              <div class="collapse" id="Reports">
+                <ul class="navbar-nav">
+                  <li class="nav-item sub-item">
+                    <a href="/RegisteredUsers.html" class="nav-link sub-nav-link">
+                      <span>Registered Users</span>
+                    </a>
+                  </li>
+                  <li class="nav-item sub-item">
+                    <a href="/LoginReports.html" class="nav-link sub-nav-link">
+                      <span>Login Reports</span>
+                    </a>
+                  </li>
+                  <li class="nav-item sub-item">
+                    <a href="/DenyUsers.html" class="nav-link sub-nav-link">
+                      <span>Deny Users</span>
+                    </a>
+                  </li>
+                  <li class="nav-item sub-item">
+                    <a href="/AbstractSummary.html" class="nav-link sub-nav-link">
+                      <span>Abstract Summary</span>
+                    </a>
+                  </li>
+                  <li class="nav-item sub-item">
+                    <a href="/AlertBuzz.html" class="nav-link sub-nav-link">
+                      <span>Alert Buzz</span>
+                    </a>
+                  </li>
+                  <li class="nav-item sub-item">
+                    <a href="/3rdEye.html" class="nav-link sub-nav-link">
+                      <span>3rd Eye</span>
+                    </a>
+                  </li>
+                  <li class="nav-item sub-item">
+                    <a href="/CCTVReport.html" class="nav-link sub-nav-link">
+                      <span>CCTV Report</span>
+                    </a>
+                  </li>
+                  <!-- Incidence -->
+                  <li class="nav-item side-nav-item" data-bs-toggle="collapse" href="#Incidence" role="button"
+                    aria-expanded="false" aria-controls="Incidence">
+                    <div class="d-flex justify-content-between align-items-center nav-link">
+                      <span>Incidence</span>
+                      <i class="fa-solid fa-angle-down fa-xl pe-2"></i>
+                    </div>
+                    <div class="collapse" id="Incidence">
+                      <ul class="navbar-nav">
+                        <li class="nav-item sub-item">
+                          <a href="/IncidenceDetails.html" class="nav-link sub-nav-link" style="margin-left: 8px;">
+                            <span>Incidence Details</span>
+                          </a>
+                        </li>
+                        <li class="nav-item sub-item">
+                          <a href="/IncidenceReport.html" class="nav-link sub-nav-link" style="margin-left: 8px;">
+                            <span>Incidence Report</span>
+                          </a>
+                        </li>
+                        <li class="nav-item sub-item">
+                          <a href="/AfterIncidence.html" class="nav-link sub-nav-link" style="margin-left: 8px;">
+                            <span>After Incidence</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <!-- Evidence -->
+                  <li class="nav-item side-nav-item" data-bs-toggle="collapse" href="#Evidence" role="button"
+                    aria-expanded="false" aria-controls="Evidence">
+                    <div class="d-flex justify-content-between align-items-center nav-link">
+                      <span>Evidence</span>
+                      <i class="fa-solid fa-angle-down fa-xl pe-2"></i>
+                    </div>
+                    <div class="collapse" id="Evidence">
+                      <ul class="navbar-nav">
+                        <li class="nav-item sub-item">
+                          <a href="/EvidenceDetails.html" class="nav-link sub-nav-link" style="margin-left: 8px;">
+                            <span>Evidence Details</span>
+                          </a>
+                        </li>
+                        <li class="nav-item sub-item">
+                          <a href="/EvidenceReport.html" class="nav-link sub-nav-link" style="margin-left: 8px;">
+                            <span>Evidence Report</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <!-- Point Book -->
+                  <li class="nav-item side-nav-item" data-bs-toggle="collapse" href="#PointBook" role="button"
+                    aria-expanded="false" aria-controls="PointBook">
+                    <div class="d-flex justify-content-between align-items-center nav-link">
+                      <span>Point Book</span>
+                      <i class="fa-solid fa-angle-down fa-xl pe-2"></i>
+                    </div>
+                    <div class="collapse" id="PointBook">
+                      <ul class="navbar-nav">
+                        <li class="nav-item sub-item">
+                          <a href="/PointBookAddition.html" class="nav-link sub-nav-link" style="margin-left: 8px;">
+                            <span>Point Book Addition</span>
+                          </a>
+                        </li>
+                        <li class="nav-item sub-item">
+                          <a href="/PointBookVisiting.html" class="nav-link sub-nav-link" style="margin-left: 8px;">
+                            <span>Point Book Visiting</span>
+                          </a>
+                        </li>
+                        <li class="nav-item sub-item">
+                          <a href="/ActualVsVisiting.html" class="nav-link sub-nav-link" style="margin-left: 8px;">
+                            <span>Actual VS Visiting</span>
+                          </a>
+                        </li>
+                        <li class="nav-item sub-item">
+                          <a href="/SeniorCitizenReport.html" class="nav-link sub-nav-link" style="margin-left: 8px;">
+                            <span>Senior Citizen Report</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <!-- GunLicense Dashboard -->
+            <li class="nav-item side-nav-item" style="border-left: 0.35rem solid #c100b1;">
+              <a href="/GunLicenseDashboard.html" class="nav-link">
+                <i class="fa-solid fa-table-columns fa-lg"></i>
+                <span>GunLicense Dashboard</span>
+              </a>
+            </li>
+            <!-- Usage Report -->
+            <li class="nav-item side-nav-item" style="border-left: 0.35rem solid #52c5ff;">
+              <a href="/UsageReport.html" class="nav-link">
+                <i class="fa-solid fa-book fa-lg"></i>
+                <span>Usage Report</span>
+              </a>
+            </li>
+            <!-- Users -->
+            <li class="nav-item side-nav-item" data-bs-toggle="collapse" href="#Users" role="button"
+              aria-expanded="false" aria-controls="Users" style="border-left: 0.35rem solid #3307f7;">
+              <div class="d-flex justify-content-between align-items-center nav-link">
+                <span><i class="fa-solid fa-users fa-lg"></i> Users</span>
+                <i class="fa-solid fa-angle-down fa-xl pe-2"></i>
+              </div>
+              <div class="collapse" id="Users">
+                <ul class="navbar-nav">
+                  <li class="nav-item sub-item">
+                    <a href="/InvalidLogins.html" class="nav-link sub-nav-link">
+                      <span>Invalid Logins</span>
+                    </a>
+                  </li>
+                  <li class="nav-item sub-item">
+                    <a href="/RejectedUsers.html" class="nav-link sub-nav-link">
+                      <span>Rejected Users</span>
+                    </a>
+                  </li>
+                  <li class="nav-item sub-item">
+                    <a href="/Users.html" class="nav-link sub-nav-link">
+                      <span>Users</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <!-- Help & Support -->
+            <li class="nav-item side-nav-item" style="border-left: 0.35rem solid #52fff1;">
+              <a href="/HelpSupport.html" class="nav-link">
+                <i class="fa-solid fa-circle-question fa-lg"></i>
+                <span>Help & Support</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
-      <!-- Menu Data end -->
 
-      <!-- mobile user and logout details start -->
       <div class="d-md-none d-block">
         <div class="dropdown">
           <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -150,14 +433,10 @@
           </ul>
         </div>
       </div>
-      <!-- mobile user and logout details start -->
-
     </div>
   </nav>
-  <!-- Navbar contains menu toggler and user details end-->
+  <!-- Side Navbar End -->
 
-
-  <!-- Main Section Start -->
   <main class="container-fluid pb-4">
     <section class="bg-white m-1 mt-3 rounded shadow-sm">
       <h1 class="h5 p-2 bg-blue-1 text-white rounded-top">Offenders List</h1>
@@ -210,7 +489,7 @@
         <div class="col-md-3 col-sm-6 col-12 p-2">
           <label for="fromdatepicker" class="form-label">From Date</label>
           <div class="input-group">
-            <input type="text" class="form-control rounded-start datepicker">
+            <input type="text" class="form-control rounded-start datepicker" id="fromdatepicker">
             <span class="input-group-text">
               <i class="fas fa-calendar-alt"></i>
             </span>
@@ -219,7 +498,7 @@
         <div class="col-md-3 col-sm-6 col-12 p-2">
           <label for="todatepicker" class="form-label">To Date</label>
           <div class="input-group">
-            <input type="text" class="form-control rounded-start datepicker">
+            <input type="text" class="form-control rounded-start datepicker" id="todatepicker">
             <span class="input-group-text">
               <i class="fas fa-calendar-alt"></i>
             </span>
@@ -251,7 +530,7 @@
       </div>
       <!-- Table -->
       <div class="table-responsive">
-        <table class="table table-hover">
+        <table class="table table-hover table-bordered">
           <thead>
             <tr>
               <th scope="col">No</th>
@@ -1178,18 +1457,16 @@
       </div>
     </section>
   </main>
-  <!-- Main Section End -->
 
-
-  <!-- Popper version 2.11.8 -->
+  <!-- JavaScript for Popper.js, necessary for Bootstrap's dropdowns and tooltips -->
   <script src="js/popper.min.js"></script>
-  <!-- Bootstrap JS version 5.3.3 -->
+  <!-- JavaScript for Bootstrap's interactive components (e.g., modals, carousels) -->
   <script src="js/bootstrap.min.js"></script>
-  <!-- Flatpickr JS -->
+  <!-- JavaScript for Flatpickr, a lightweight date picker library -->
   <script src="js/flatpickr.js"></script>
-  <!-- Custom JS -->
+  <!-- Custom JavaScript for additional functionality and interactions -->
   <script src="js/script.js"></script>
-  <!-- Table Pagination -->
+  <!-- Pagination JavaScript for Table pagination -->
   <script src="js/scriptPagination.js"></script>
 </body>
 

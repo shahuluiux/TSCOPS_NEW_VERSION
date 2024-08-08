@@ -164,13 +164,19 @@ li.side-nav-item {
 
 .nav-link {
   color: var(--grdient-c3);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .active-side-nav-link,
 .nav-link:hover {
   background: #e23177;
   color: white;
+}
+
+.active-sub-nav-link {
+  color: #e23177;
+  font-weight: 600;
+  background: rgb(239, 238, 238);
 }
 
 .sub-nav-link {
@@ -211,7 +217,7 @@ li.side-nav-item {
 .table-responsive {
   width: 100%;
   overflow: auto;
-  max-height: 580px;
+  max-height: 500px;
 }
 
 .table thead th {
@@ -229,6 +235,10 @@ li.side-nav-item {
   background: var(--danger-light);
 }
 
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #e8e8e8;
+}
 
 
 

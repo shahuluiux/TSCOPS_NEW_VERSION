@@ -91,7 +91,7 @@
           <ul class="navbar-nav">
             <!-- Dashboard -->
             <li class="nav-item side-nav-item" style="border-left: 0.35rem solid #ceff52;">
-              <a href="/Dashboard.html" class="nav-link active-side-nav-link">
+              <a href="/Dashboard.html" class="nav-link">
                 <i class="fa-solid fa-dashboard fa-lg"></i>
                 <span>dashboard</span>
               </a>
@@ -99,7 +99,7 @@
             <!-- Offenders -->
             <li class="nav-item side-nav-item" data-bs-toggle="collapse" href="#offenders" role="button"
               aria-expanded="false" aria-controls="offenders" style="border-left: 0.35rem solid #07ebf7;">
-              <div class="d-flex justify-content-between align-items-center nav-link">
+              <div class="d-flex justify-content-between align-items-center nav-link active-side-nav-link">
                 <span><i class="fa-solid fa-user-secret fa-lg"></i> Offenders</span>
                 <i class="fa-solid fa-angle-down fa-xl pe-2"></i>
               </div>
@@ -111,7 +111,7 @@
                     </a>
                   </li>
                   <li class="nav-item sub-item">
-                    <a href="/OffendersSearch.html" class="nav-link sub-nav-link">
+                    <a href="/OffendersSearch.html" class="nav-link sub-nav-link  active-sub-nav-link">
                       <span>Offenders Search</span>
                     </a>
                   </li>
@@ -439,596 +439,1021 @@
 
   <main class="container-fluid pb-4">
     <section class="bg-white m-1 mt-3 rounded shadow-sm">
-      <h1 class="h5 p-2 bg-blue-1 text-white rounded-top">Add Offenders</h1>
-      <!-- Tabs navigation -->
-      <div class="p-3">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="offenderPersonalInformation-tab" data-bs-toggle="tab"
-              href="#offenderPersonalInformation" role="tab" aria-controls="offenderPersonalInformation"
-              aria-selected="true">Offender Personal Information</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" id="familyDetails-tab" data-bs-toggle="tab" href="#familyDetails" role="tab"
-              aria-controls="familyDetails" aria-selected="false">Family Details</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" id="associatesOrFriends-tab" data-bs-toggle="tab" href="#associatesOrFriends" role="tab"
-              aria-controls="associatesOrFriends" aria-selected="false">Associates/Friends</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" id="involvementCases-tab" data-bs-toggle="tab" href="#involvementCases" role="tab"
-              aria-controls="involvementCases" aria-selected="false">Involvement Cases</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" id="documents-tab" data-bs-toggle="tab" href="#documents" role="tab"
-              aria-controls="documents" aria-selected="false">Documents</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" id="photoUpload-tab" data-bs-toggle="tab" href="#photoUpload" role="tab"
-              aria-controls="photoUpload" aria-selected="false">Photo Upload</a>
-          </li>
-        </ul>
-        <!-- Tabs content -->
-        <div class="tab-content py-3" id="myTabContent">
-          <!-- Offender Personal Information Tab -->
-          <div class="tab-pane fade show active" id="offenderPersonalInformation" role="tabpanel"
-            aria-labelledby="offenderPersonalInformation-tab">
-            <div class="row">
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="OffenderName" class="form-label">Offender Name <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" aria-label="Offender Name" id="OffenderName"
-                  placeholder="Offender Name" required>
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="Aliases" class="form-label">Aliases <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" aria-label="Aliases" id="Aliases" placeholder="Aliases"
-                  required>
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="dobdatepicker" class="form-label">DOB</label>
-                <div class="input-group">
-                  <input type="text" class="form-control rounded-start datepicker" id="dobdatepicker"
-                    placeholder="DD-MM-YYYY">
-                  <span class="input-group-text">
-                    <i class="fas fa-calendar-alt"></i>
-                  </span>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="age" class="form-label">Age <span class="text-danger">*</span></label>
-                <input type="number" class="form-control" aria-label="Age" id="age" placeholder="Age" required>
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="mobile" class="form-label">Mobile</label>
-                <input type="number" class="form-control" aria-label="Mobile" id="mobile" placeholder="Mobile Number">
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="e-MailID" class="form-label">E-Mail ID</label>
-                <input type="email" class="form-control" aria-label="E-Mail ID" id="e-MailID" placeholder="E-Mail ID">
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="vehicleDetails" class="form-label">Vehicle Details</label>
-                <input type="text" class="form-control" aria-label="Vehicle Details(Is Offender Having any Vehicle)"
-                  id="vehicleDetails" placeholder="Vehicle Details(Is Offender Having any Vehicle)">
-                <span class="text-danger fs-7 fw-medium">(Is Offender Having any Vehicle)</span>
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="DateOfArrestdatepicker" class="form-label">Date of Arrest <span
-                    class="text-danger">*</span></label>
-                <div class="input-group">
-                  <input type="text" class="form-control rounded-start datepicker" id="DateOfArrestdatepicker"
-                    placeholder="DD-MM-YYYY">
-                  <span class="input-group-text">
-                    <i class="fas fa-calendar-alt"></i>
-                  </span>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="DateOfReleasedatepicker" class="form-label">Date of Release <span
-                    class="text-danger">*</span></label>
-                <div class="input-group">
-                  <input type="text" class="form-control rounded-start datepicker" id="DateOfReleasedatepicker"
-                    placeholder="DD-MM-YYYY">
-                  <span class="input-group-text">
-                    <i class="fas fa-calendar-alt"></i>
-                  </span>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="District" class="form-label">District <span class="text-danger">*</span></label>
-                <select class="form-select" aria-label="District" id="District" disabled required>
-                  <option value="">--Select--</option>
-                  <option value="2011">Adilabad</option>
-                  <option value="2022">Cyberabad</option>
-                  <option value="2023">Hyderabad City</option>
-                  <option value="2065">Jagtial</option>
-                  <option value="2076">Jayashankar (Bhupalpally)</option>
-                  <option value="2070">Jogulamba Gadwal</option>
-                  <option value="2073">Kamareddy</option>
-                  <option value="2024">Karimnagar</option>
-                  <option value="2025">Khammam</option>
-                  <option value="2061">Komaram Bheem, Asifabad</option>
-                  <option value="2067">Kothagudem</option>
-                  <option value="2028">Mahaboobnagar</option>
-                  <option value="2075">Mahabubabad</option>
-                  <option value="2029">Medak</option>
-                  <option value="2079">Mulugu</option>
-                  <option value="2071">Nagarkurnool</option>
-                  <option value="2030">Nalgonda</option>
-                  <option value="2080">Narayanpet</option>
-                  <option value="2063">Nirmal</option>
-                  <option value="2032">Nizamabad</option>
-                  <option selected="selected" value="2060">Rachakonda</option>
-                  <option value="2066">Rajanna Sircilla</option>
-                  <option value="2064">Ramagundam</option>
-                  <option value="2068">Sangareddy</option>
-                  <option value="2069">Siddipet</option>
-                  <option value="2074">Suryapet</option>
-                  <option value="2077">Vikarabad</option>
-                  <option value="2072">Wanaparthy</option>
-                  <option value="2044">Warangal Commissionerate</option>
-                  <option value="2050">CID</option>
-                  <option value="2085">ACB</option>
-                  <option value="2083">Police Training Units</option>
-                  <option value="2084">Range Offices</option>
-                  <option value="2081">Special Units</option>
-                  <option value="2082">TSSP</option>
-                  <option value="2000">Zone Offices</option>
-                  <option value="2020">GRP Secunderabad</option>
-                </select>
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="policeStation1" class="form-label">Police Station <span class="text-danger">*</span></label>
-                <select class="form-select" aria-label="Police Station" id="policeStation1" required>
-                  <option value="">--Select--</option>
-                  <option value="1291">Abdullapurmet PS</option>
-                  <option value="1311">Addaguduru PS</option>
-                  <option value="1276">Adibatla PS</option>
-                  <option value="1303">Alair PS</option>
-                  <option value="1317">Atmakur (M) PS</option>
-                  <option value="1292">Balapur PS</option>
-                  <option value="1304">Bhongir (R) PS</option>
-                  <option value="1305">Bhongir TN PS</option>
-                  <option value="1306">Bibinagar PS</option>
-                  <option value="1307">Bommala Ramaram PS</option>
-                  <option value="1284">Chaitanyapuri PS</option>
-                  <option value="2418">Cherlapally PS</option>
-                  <option value="1312">Choutuppal PS</option>
-                  <option value="1293">Ghatkeshwar PS</option>
-                  <option value="2131">Gundala PS</option>
-                  <option value="1287">Hayathnagar PS</option>
-                  <option value="2422">Hyderabad Green Pharmacity PS</option>
-                  <option value="1277">Ibrahimpatnam PS</option>
-                  <option value="1298">Jawaharnagar PS</option>
-                  <option value="1278">Kandukur PS</option>
-                  <option value="1300">Keesara PS</option>
-                  <option value="1299">Kusaiguda PS</option>
-                  <option value="1285">L.B. Nagar L And O PS</option>
-                  <option value="1282">Madgul PS</option>
-                  <option value="1279">Maheswaram PS</option>
-                  <option value="1294">Malkajgiri PS</option>
-                  <option value="1280">Manchal PS</option>
-                  <option value="1295">Medipally PS</option>
-                  <option value="1288">Meerpet PS</option>
-                  <option value="1302">Motakondur PS</option>
-                  <option value="1313">Mothkur PS</option>
-                  <option value="1296">Nacharam PS</option>
-                  <option value="2420">Nagole PS</option>
-                  <option value="1314">Narayanapur PS</option>
-                  <option value="1301">Neredmet PS</option>
-                  <option value="1289">Pahadisharief PS</option>
-                  <option value="1318">Pochampalli PS</option>
-                  <option value="2416">Pocharam IT Corridor PS</option>
-                  <option value="1309">Rajapet PS</option>
-                  <option value="1315">Ramannapet PS</option>
-                  <option value="1286">Saroornagar PS</option>
-                  <option value="">Saroornagar WPS</option>
-                  <option value="1310">Thurkapalli PS</option>
-                  <option value="1297">Uppal PS</option>
-                  <option value="2417">Uppal WPS</option>
-                  <option value="1316">Valigonda PS</option>
-                  <option value="1290">Vanasthalipuram PS</option>
-                  <option value="1281">Yacharam PS</option>
-                  <option value="1319">Yadagirigutta PS</option>
-                </select>
-                <span class="text-danger fs-7 fw-medium">(Where offender Resides)</span>
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="historySheet" class="form-label">History Sheet</label>
-                <select class="form-select" aria-label="History Sheet" id="historySheet">
-                  <option value="--Select--">--Select--</option>
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
-                </select>
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="latestPhotographTaken" class="form-label">Latest Photograph Taken</label>
-                <select class="form-select" aria-label="Latest Photograph Taken" id="latestPhotographTaken">
-                  <option value="--Select--">--Select--</option>
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
-                </select>
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="currentActivity" class="form-label">Current Activity</label>
-                <input type="text" class="form-control" aria-label="Current Activity" id="currentActivity"
-                  placeholder="Current Activity">
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="presentAddress" class="form-label">Present Address <span
-                    class="text-danger">*</span></label>
-                <input type="text" class="form-control" aria-label="Present Address" id="presentAddress"
-                  placeholder="Present Address" required>
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="permanentAddress" class="form-label">Permanent Address</label>
-                <input type="text" class="form-control" aria-label="Permanent Address" id="permanentAddress"
-                  placeholder="Permanent Address">
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="offenderHouseOwner" class="form-label">Offender House Owner</label>
-                <input type="text" class="form-control" aria-label="Offender House Owner" id="offenderHouseOwner"
-                  placeholder="Offender House Owner">
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="modusOperendi" class="form-label">Modus Operendi <span class="text-danger">*</span></label>
-                <select class="form-select" aria-label="Modus Operendi" id="modusOperendi" required>
-                  <option value="--Select--">--Select--</option>
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
-                </select>
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="socialMedia" class="form-label">Social Media</label>
-                <input type="text" class="form-control" aria-label="Social Media" id="socialMedia"
-                  placeholder="Like Facebook,Instagram,Twitter">
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="addressAsPerPSRecord" class="form-label">Address As Per PS Record <span
-                    class="text-danger">*</span></label>
-                <input type="text" class="form-control" aria-label="Address As Per PS Record " id="addressAsPerPSRecord"
-                  placeholder="Address As Per PS Record" required>
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="latitude" class="form-label">Latitude</label>
-                <input type="text" class="form-control" aria-label="Latitude" id="latitude" placeholder="Latitude">
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="longitude" class="form-label">Longitude</label>
-                <input type="text" class="form-control" aria-label="Longitude" id="longitude" placeholder="Longitude">
-              </div>
-            </div>
-          </div>
-          <!-- Family Details Tab -->
-          <div class="tab-pane fade" id="familyDetails" role="tabpanel" aria-labelledby="familyDetails-tab">
-            <div class="row">
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <input type="number" class="form-control" aria-label="Add Number of Members" id="addNumberofMembers"
-                  placeholder="Add Number of Members">
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <button type="button" class="btn btn-pink btn-full">Add No of Members</button>
-              </div>
-              <hr class="my-1">
-              <div class="table-responsive mt-2">
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col">Relation Type</th>
-                      <th scope="col">Relation Name</th>
-                      <th scope="col">Mobile</th>
-                      <th scope="col">Occupation</th>
-                      <th scope="col">Address</th>
-                      <th scope="col">Proof</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <select name="relationType" class="form-select" aria-label="District" id="relationType"
-                          required>
-                          <option value="">--Select--</option>
-                          <option value="3">Father</option>
-                          <option value="4">Mother</option>
-                          <option value="5">Wife</option>
-                          <option value="6">Husband</option>
-                          <option value="7">Son</option>
-                          <option value="8">Daughter</option>
-                          <option value="9">Sister</option>
-                          <option value="10">Brother</option>
-                          <option value="11">Uncle</option>
-                          <option value="12">Aunt</option>
-                          <option value="13">Maternal Uncle</option>
-                          <option value="14">Maternal Aunt</option>
-                          <option value="15">Grand father</option>
-                          <option value="16">Grand Mother</option>
-                          <option value="17">Spouse</option>
-                          <option value="18">Father-in-law</option>
-                          <option value="19">Mother-in-law</option>
-                          <option value="20">Sister-in-law</option>
-                          <option value="21">Brother-in-law</option>
-                          <option value="22">Son-in-law</option>
-                          <option value="23">Daughter-in-law</option>
-
-                        </select>
-                      </td>
-                      <td>
-                        <input type="text" class="form-control" aria-label="Relation Name" id="relationName"
-                          placeholder="Relation Name">
-                      </td>
-                      <td>
-                        <input type="number" class="form-control" aria-label="Relation Mobile" id="relationMobile"
-                          placeholder="Relation Mobile">
-                        <span class="text-danger">Enter valid Phone number</span>
-
-                      </td>
-                      <td>
-                        <textarea name="RelationOccupation1" rows="2" cols="20" id="RelationOccupation1"
-                          class="form-control" placeholder="Occupation"></textarea>
-                      </td>
-                      <td>
-                        <textarea name="RelationAddress1" rows="2" cols="20" id="RelationAddress1" class="form-control"
-                          placeholder="Address"></textarea>
-                      </td>
-                      <td>
-                        <textarea name="AnyProofs1" rows="2" cols="20" id="AnyProofs1" class="form-control"
-                          placeholder="Remarks"></textarea>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <!-- Associates / Friends Tab -->
-          <div class="tab-pane fade" id="associatesOrFriends" role="tabpanel" aria-labelledby="associatesOrFriends-tab">
-            <div class="row">
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <input type="number" class="form-control" aria-label="Add Number of Association"
-                  id="addNumberofAssociation" placeholder="Add Number of Association">
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <button type="button" class="btn btn-pink btn-full">Add No of Association</button>
-              </div>
-              <hr class="my-1">
-              <div class="table-responsive mt-2">
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col">Associate Type</th>
-                      <th scope="col">Associate Name</th>
-                      <th scope="col">Mobile</th>
-                      <th scope="col">Occupation</th>
-                      <th scope="col">Address</th>
-                      <th scope="col">Proof</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <select name="associateType" class="form-select" aria-label="District" id="associateType"
-                          required>
-                          <option value="">--Select--</option>
-                          <option value="3">Father</option>
-                          <option value="4">Mother</option>
-                          <option value="5">Wife</option>
-                          <option value="6">Husband</option>
-                          <option value="7">Son</option>
-                          <option value="8">Daughter</option>
-                          <option value="9">Sister</option>
-                          <option value="10">Brother</option>
-                          <option value="11">Uncle</option>
-                          <option value="12">Aunt</option>
-                          <option value="13">Maternal Uncle</option>
-                          <option value="14">Maternal Aunt</option>
-                          <option value="15">Grand father</option>
-                          <option value="16">Grand Mother</option>
-                          <option value="17">Spouse</option>
-                          <option value="18">Father-in-law</option>
-                          <option value="19">Mother-in-law</option>
-                          <option value="20">Sister-in-law</option>
-                          <option value="21">Brother-in-law</option>
-                          <option value="22">Son-in-law</option>
-                          <option value="23">Daughter-in-law</option>
-
-                        </select>
-                      </td>
-                      <td>
-                        <input type="text" class="form-control" aria-label="Associate Name" id="AssociateName"
-                          placeholder="Associate Name">
-                      </td>
-                      <td>
-                        <input type="number" class="form-control" aria-label="Associate Mobile" id="AssociateMobile"
-                          placeholder="Associate Mobile">
-                        <span class="text-danger">Enter valid Phone number</span>
-
-                      </td>
-                      <td>
-                        <textarea name="RelationOccupation2" rows="2" cols="20" id="RelationOccupation2"
-                          class="form-control" placeholder="Occupation"></textarea>
-                      </td>
-                      <td>
-                        <textarea name="RelationAddress2" rows="2" cols="20" id="RelationAddress2" class="form-control"
-                          placeholder="Address"></textarea>
-                      </td>
-                      <td>
-                        <textarea name="AnyProofs2" rows="2" cols="20" id="AnyProofs2" class="form-control"
-                          placeholder="Remarks"></textarea>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <!-- Involment Tab -->
-          <div class="tab-pane fade" id="involvementCases" role="tabpanel" aria-labelledby="involvementCases-tab">
-            <div class="row">
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <input type="number" class="form-control" aria-label="Add Number of Case" id="addNumberofCase"
-                  placeholder="Add Number of Case">
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <button type="button" class="btn btn-pink btn-full">Add No of Case</button>
-              </div>
-              <hr class="my-1">
-              <div class="table-responsive mt-2">
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col">Crime Number</th>
-                      <th scope="col">District</th>
-                      <th scope="col">Police Station</th>
-                      <th scope="col">Arrested Date</th>
-                      <th scope="col">Section of Law</th>
-                      <th scope="col">Crime Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <input type="text" class="form-control" aria-label="Crime Number" id="crimeNumber"
-                          placeholder="Crime Number">
-                      </td>
-                      <td>
-                        <select name="district" class="form-select" aria-label="District" id="district" required>
-                          <option selected="selected" value="">--Select--</option>
-                          <option value="2011">Adilabad</option>
-                          <option value="2022">Cyberabad</option>
-                          <option value="2023">Hyderabad City</option>
-                          <option value="2065">Jagtial</option>
-                          <option value="2076">Jayashankar (Bhupalpally)</option>
-                          <option value="2070">Jogulamba Gadwal</option>
-                          <option value="2073">Kamareddy</option>
-                          <option value="2024">Karimnagar</option>
-                          <option value="2025">Khammam</option>
-                          <option value="2061">Komaram Bheem, Asifabad</option>
-                          <option value="2067">Kothagudem</option>
-                          <option value="2028">Mahaboobnagar</option>
-                          <option value="2075">Mahabubabad</option>
-                          <option value="2029">Medak</option>
-                          <option value="2079">Mulugu</option>
-                          <option value="2071">Nagarkurnool</option>
-                          <option value="2030">Nalgonda</option>
-                          <option value="2080">Narayanpet</option>
-                          <option value="2063">Nirmal</option>
-                          <option value="2032">Nizamabad</option>
-                          <option value="2060">Rachakonda</option>
-                          <option value="2066">Rajanna Sircilla</option>
-                          <option value="2064">Ramagundam</option>
-                          <option value="2068">Sangareddy</option>
-                          <option value="2069">Siddipet</option>
-                          <option value="2074">Suryapet</option>
-                          <option value="2077">Vikarabad</option>
-                          <option value="2072">Wanaparthy</option>
-                          <option value="2044">Warangal Commissionerate</option>
-                          <option value="2050">CID</option>
-                          <option value="2085">ACB</option>
-                          <option value="2083">Police Training Units</option>
-                          <option value="2084">Range Offices</option>
-                          <option value="2081">Special Units</option>
-                          <option value="2082">TSSP</option>
-                          <option value="2000">Zone Offices</option>
-                          <option value="2020">GRP Secunderabad</option>
-                        </select>
-                      </td>
-                      <td>
-                        <select name="Police Station" class="form-select" aria-label="Police Station"
-                          id="policeStation2" required>
-                          <option selected="selected" value="">--Select--</option>
-                          <option value="2011">Adilabad</option>
-                        </select>
-                      </td>
-                      <td>
-                        <div class="input-group">
-                          <input type="text" class="form-control flatpickr-input" id="arresteddatepicker"
-                            placeholder="Pick a Arrested Date" aria-label="Arrested Date">
-                          <span class="input-group-text">
-                            <i class="fas fa-calendar-alt"></i>
-                          </span>
-                        </div>
-                      </td>
-                      <td>
-                        <input type="text" class="form-control" aria-label="Section Of Law" id="sectionOfLaw"
-                          placeholder="Section Of Law">
-                      </td>
-                      <td>
-                        <select name="Crime Status" class="form-select" aria-label="Crime Status" id="crimeStatus"
-                          required>
-                          <option selected="selected" value="">--Select--</option>
-                        </select>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <!-- documents Tab -->
-          <div class="tab-pane fade" id="documents" role="tabpanel" aria-labelledby="documents-tab">
-            <div class="row">
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="proofType" class="form-label">Proof Type <span class="text-danger">*</span></label>
-                <select name="Proof Type" class="form-select" aria-label="Proof Type" id="proofType" required>
-                  <option selected="selected" value="">--Select--</option>
-                </select>
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="enterIDProofDetails" class="form-label">Proof Type <span class="text-danger">*</span>
-                </label>
-                <input type="type" class="form-control" aria-label="Proof Type" id="enterIDProofDetails"
-                  placeholder="Proof Type">
-              </div>
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="IDProofAttachement" class="form-label">ID Proof Attachement <span
-                    class="text-danger">*</span>
-                </label>
-                <input type="file" class="form-control" aria-label="ID Proof Attachement" id="IDProofAttachement">
-              </div>
-            </div>
-          </div>
-          <!-- photoUpload Tab -->
-          <div class="tab-pane fade" id="photoUpload" role="tabpanel" aria-labelledby="photoUpload-tab">
-            <div class="row">
-              <div class="col-md-3 col-sm-6 col-12 px-3 py-2">
-                <label for="UploadPhoto" class="form-label">Photo Upload <span class="text-danger">*</span>
-                </label>
-                <input type="file" class="form-control" aria-label="Photo Upload" id="UploadPhoto">
-              </div>
-              <div class="col-md-4 col-sm-6 col-12 px-3 py-2 d-grid align-items-end">
-                <button type="button" class="btn btn-pink">Submit</button>
-              </div>
-            </div>
-            <hr class="my-2" />
-            <div class="bg-danger-light p-4 rounded">
-              <p class="fw-medium text-decoration-underline">Instructions To Upload Photo:</p>
-              <ul>
-                <li>The Uploading picture should have a minimum 300 dpi, or a minimum of roughly 640 pixels x 480
-                  pixels. (pre-set
-                  done in the tab with coding)
-                </li>
-                <li>Pose your subjects to take a full face view (head-on)Lighting is very important; lighting should be
-                  uniform and
-                  bright,without casting shadows. </li>
-                <li>Natural light is best, but if you are using artificial lighting be sure it comes from several
-                  sources. </li>
-                <li>Fill-in flash is often very effective, even in good lighting conditions, to eliminate shadows.</li>
-                <li>You may be able to take very flattering pictures outdoors. However, you should not take pictures in
-                  very bright
-                  sunlight, and must avoid strong shadows.</li>
-                <li>Backgrounds are best when they are uniform and neutral: white or off-white is the most common.</li>
-                <li>Solid blue or green backgrounds are often used by professionals, as these can be easily masked out.
-                </li>
-                <li>Make sure the background fills the full frame of the picture behind the person.</li>
-                <li>The camera should be placed at roughly the same height as the face of the subject.</li>
-                <li>However, if the subject wears glasses, raising the camera slightly higher will avoid</li>
-                <li>glare/reflection of the flash off the lenses of the glasses.</li>
-                <li>Frame the picture to include the shoulders, and leave some room above the head.</li>
-              </ul>
-            </div>
+      <h1 class="h5 p-2 bg-blue-1 text-white rounded-top">Offenders List</h1>
+      <form class="row px-4 pb-3">
+        <div class="col-md-3 col-sm-6 col-12 p-2">
+          <label for="ZoneSDPO" class="form-label">Zone/SDPO</label>
+          <select class="form-select" aria-label="Zone SDPO" id="ZoneSDPO">
+            <option selected="selected" value="">--Select--</option>
+            <option value="Bhongir">Bhongir</option>
+            <option value="L.B.Nagar">L.B.Nagar</option>
+            <option value="Maheshwaram Zone">Maheshwaram Zone</option>
+            <option value="Malkajgiri">Malkajgiri</option>
+          </select>
+        </div>
+        <div class="col-md-3 col-sm-6 col-12 p-2">
+          <label for="Division" class="form-label">Division</label>
+          <select class="form-select" aria-label="Division" id="Division">
+            <option selected="selected" value="">--Select--</option>
+            <option value="Bhongir">Bhongir</option>
+            <option value="L.B.Nagar">L.B.Nagar</option>
+            <option value="Maheshwaram Zone">Maheshwaram Zone</option>
+            <option value="Malkajgiri">Malkajgiri</option>
+          </select>
+        </div>
+        <div class="col-md-3 col-sm-6 col-12 p-2">
+          <label for="PoliceStation" class="form-label">Police Station</label>
+          <select class="form-select" aria-label="Police Station" id="PoliceStation">
+            <option selected="selected" value="">--Select--</option>
+            <option value="Bhongir">Bhongir</option>
+            <option value="L.B.Nagar">L.B.Nagar</option>
+            <option value="Maheshwaram Zone">Maheshwaram Zone</option>
+            <option value="Malkajgiri">Malkajgiri</option>
+          </select>
+        </div>
+        <div class="col-md-3 col-sm-6 col-12 p-2">
+          <label for="OffenderName" class="form-label">Offender Name</label>
+          <input type="text" class="form-control" aria-label="Offender Name" id="OffenderName"
+            placeholder="Offender Name">
+        </div>
+        <div class="col-md-3 col-sm-6 col-12 p-2">
+          <label for="moType" class="form-label">MO Type</label>
+          <select class="form-select" aria-label="MO Type" id="moType">
+            <option selected="selected" value="">--Select--</option>
+            <option value="Bhongir">Bhongir</option>
+            <option value="L.B.Nagar">L.B.Nagar</option>
+            <option value="Maheshwaram Zone">Maheshwaram Zone</option>
+            <option value="Malkajgiri">Malkajgiri</option>
+          </select>
+        </div>
+        <div class="col-md-3 col-sm-6 col-12 p-2">
+          <label for="fromdatepicker" class="form-label">From Date</label>
+          <div class="input-group">
+            <input type="text" class="form-control rounded-start datepicker" id="fromdatepicker">
+            <span class="input-group-text">
+              <i class="fas fa-calendar-alt"></i>
+            </span>
           </div>
         </div>
+        <div class="col-md-3 col-sm-6 col-12 p-2">
+          <label for="todatepicker" class="form-label">To Date</label>
+          <div class="input-group">
+            <input type="text" class="form-control rounded-start datepicker" id="todatepicker">
+            <span class="input-group-text">
+              <i class="fas fa-calendar-alt"></i>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-12 p-2 d-flex align-items-end flex-grow-1">
+          <button type="button" class="btn btn-blue btn-full">Search</button>
+        </div>
+      </form>
+    </section>
+    <section class="bg-white m-1 mt-3 rounded shadow-sm p-1">
+      <!-- Filter and Table Container -->
+      <div
+        class="d-flex justify-content-between align-items-center px-2 pt-1 mb-3 flex-column flex-sm-row gap-2 gap-sm-0">
+        <!-- Rows per page filter -->
+        <div class="d-flex justify-content-center align-items-baseline gap-2">
+          <label for="rowsPerPage" class="form-label">Rows per page:</label>
+          <select id="rowsPerPage" class="form-select" style="width: auto;">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+          </select>
+        </div>
+        <div class="d-flex gap-2 align-items-center">
+          <button type="button" class="btn btn-pink">Reste LatLangs</button>
+          <p>Total Count: <span><b>1234</b></span></p>
+        </div>
+      </div>
+      <!-- Table -->
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">District</th>
+              <th scope="col">Police Station</th>
+              <th scope="col">Offender Name</th>
+              <th scope="col">ALIASES</th>
+              <th scope="col">Age</th>
+              <th scope="col">MOBILE NO</th>
+              <th scope="col">PRESENT ADDRESS</th>
+              <th scope="col">PS ARRESTED</th>
+              <th scope="col">DATE OF LAST ARREST</th>
+              <th scope="col">Latitude</th>
+              <th scope="col">Longitude</th>
+              <th scope="col">Image</th>
+              <th scope="col">GeoTag Status</th>
+              <th scope="col">Update</th>
+              <th scope="col">Last Visiting Remarks</th>
+              <th scope="col">Last Visited Date</th>
+              <th scope="col">Checked By</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Example rows -->
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Hyderabad City</td>
+              <td>BOLLARAM PS</td>
+              <td>Doddi Narsing</td>
+              <td>Narsing</td>
+              <td>46</td>
+              <td>9640654085</td>
+              <td>S.C.B 8-23-339,Chintal Bazar bollarum</td>
+              <td></td>
+              <td>2023-07-03</td>
+              <td></td>
+              <td></td>
+              <td>
+                <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="48" height="48"
+                  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images-icons/img-placeholder.png" alt="Profile Pic" width="320" height="320" />
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>Not-geotagged</td>
+              <td><a href="/">Edit</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+      <!-- Pagination -->
+      <div class="d-flex justify-content-end pe-2">
+        <nav aria-label="Page navigation">
+          <ul class="pagination" id="paginationControls">
+            <!-- Pagination controls will be dynamically generated here -->
+          </ul>
+        </nav>
       </div>
     </section>
   </main>
@@ -1041,6 +1466,8 @@
   <script src="js/flatpickr.js"></script>
   <!-- Custom JavaScript for additional functionality and interactions -->
   <script src="js/script.js"></script>
+  <!-- Pagination JavaScript for Table pagination -->
+  <script src="js/scriptPagination.js"></script>
 </body>
 
 </html>
