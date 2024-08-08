@@ -5,182 +5,113 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TSCOP</title>
-  <!-- Bootstrap CSS version 5.3.3 -->
+  <!-- Bootstrap CSS for styling -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awsome Icon -->
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="assets/fontawesome-free-6.6.0-web/css/all.min.css" />
-  <!-- Flatpickr CSS -->
+  <!-- Flatpickr CSS for date picker -->
   <link href="css/flatpickr.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
+  <!-- Custom CSS for additional styling -->
   <link href="css/style.css" rel="stylesheet">
-  <!-- Font Family -->
+  <!-- Google Fonts preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Custom font styles -->
   <link href="css/fonts.css" rel="stylesheet">
-  <!-- Meta Tags -->
+  <!-- Favicon for the website -->
   <link rel="icon" type="ico" href="favicon.ico">
+  <!-- Meta description for SEO -->
   <meta name="description"
     content="TSCOP app allows police officers to access crime and criminal databases, match images of people taken during patrols and includes an integrated facial recognition system to identify criminals, unidentified bodies at crime scenes or missing children.">
 </head>
 
-<body>
-  <!-- header start -->
-  <header class="header d-flex justify-content-between align-items-center">
-    <!-- Logo -->
-    <div class="d-block">
-      <img src="assets/images-icons/tscop_main_logo.png" alt="TSCOP Main Logo">
-    </div>
-    <!-- right side data start -->
-    <div class="d-md-flex d-none px-2 justify-content-between align-items-center gap-2">
-      <figure class="d-flex justify-content-between align-items-center m-0 gap-2">
-        <figcaption class="d-flex flex-column">
-          <span class="text-light fs-5">UserName</span>
-          <span class="text-lighter fs-6">Designation</span>
-        </figcaption>
-        <img src="assets/images-icons/policeman.png" alt="user profile" width="48px" height="48px"
-          style="border-radius: 100%; border: 2px solid white;">
-      </figure>
-      <div>
-        <button class="btn btn-sm p-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa-solid fa-bell text-white fa-xl"></i>
-        </button>
-        <ul class="dropdown-menu">
-          <li class="notification-list truncate"><a href="/" class="notification-list-link">Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Laborum aliquam assumenda asperiores?</a></li>
-          <li class="notification-list truncate"><a href="/" class="notification-list-link">Lorem ipsum dolor sit
-              amet.</a></li>
-          <li class="notification-list truncate"><a href="/" class="notification-list-link">Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Architecto.</a></li>
-          <li class="notification-list truncate"><a href="/" class="notification-list-link">Lorem ipsum dolor sit amet
-              consectetur, adipisicing elit.</a></li>
-        </ul>
-      </div>
-      <button class="btn btn-sm p-3" type="button" aria-label="Logout btn" data-bs-toggle="modal"
-        data-bs-target="#logout-btn">
-        <i class="fa-solid fa-power-off text-white fa-xl"></i>
-      </button>
-    </div>
-    <!-- right side data end -->
-    <!-- Logout popup start -->
-    <div class="modal fade" id="logout-btn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="logout-btnLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-body">
-            Are you sure you want to logout!
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-            <button type="button" class="btn btn-pink">Yes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Logout popup end -->
+<body class="login-body">
+
+  <!-- Header section with logo -->
+  <header class="login-header d-flex justify-content-center align-items-center">
+    <img src="assets/images-icons/tscop_logo.png" alt="TSCOP Logo" width="120x" height="120x" />
   </header>
 
-  <!-- Main Section Start -->
-  <main class="container-fluid pb-4">
-    <section class="bg-white m-1 mt-3 rounded shadow-sm">
-      <section class="row px-2 pt-2">
-        <div class="col-md-3 col-sm-6 col-12 pb-3">
-          <label for="zoneSelect" class="form-label">Zone</label>
-          <select class="form-select" aria-label="Zone select example" id="zoneSelect">
-            <option selected value="01">--Select--</option>
-            <option value="lastWeek">Last Week</option>
-            <option value="oneMonth">One Month</option>
-            <option value="customDates">Custom Date</option>
-          </select>
+  <!-- Main login form section -->
+  <main class="login-main p-2 d-flex justify-content-center align-items-center">
+    <div class="login-container">
+      <form action="" class="row px-2 gap-4">
+        <!-- Username input field -->
+        <div class="input-group flex-nowrap col-12">
+          <span class="input-group-text" id="addon-wrapping">
+            <i class="fa-solid fa-user"></i>
+          </span>
+          <input type="text" class="form-control" placeholder="User Name" aria-label="User Name"
+            aria-describedby="addon-wrapping" id="UserName" autocomplete="off" required>
         </div>
-        <div class="col-md-3 col-sm-6 col-12 pb-3">
-          <label for="divisionSelect" class="form-label">Division</label>
-          <select class="form-select" aria-label="Division select example" id="divisionSelect">
-            <option selected value="01">--Select--</option>
-            <option value="lastWeek">Last Week</option>
-            <option value="oneMonth">One Month</option>
-            <option value="customDates">Custom Date</option>
-          </select>
+        <!-- Password input field -->
+        <div class="input-group flex-nowrap col-12">
+          <span class="input-group-text" id="addon-wrapping">
+            <i class="fa-solid fa-lock"></i>
+          </span>
+          <input type="password" class="form-control" placeholder="Password" aria-label="Password"
+            aria-describedby="addon-wrapping" id="UserPassword" autocomplete="off" required>
         </div>
-        <div class="col-md-3 col-sm-6 col-12 pb-3">
-          <label for="policeStationSelect" class="form-label">Police Station</label>
-          <select class="form-select" aria-label="Police Station select example" id="policeStationSelect">
-            <option selected value="01">--Select--</option>
-            <option value="lastWeek">Last Week</option>
-            <option value="oneMonth">One Month</option>
-            <option value="customDates">Custom Date</option>
-          </select>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 pb-3">
-          <label for="incidentType" class="form-label">Incident Type</label>
-          <select class="form-select" aria-label="Incident Type select example" id="incidentType">
-            <option selected value="01">--Select--</option>
-            <option value="lastWeek">Last Week</option>
-            <option value="oneMonth">One Month</option>
-            <option value="customDates">Custom Date</option>
-          </select>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 pb-3">
-          <label for="incidentID" class="form-label">Incident ID</label>
-          <input type="text" class="form-control" aria-label="Incident ID" id="incidentID" placeholder="">
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 pb-3">
-          <label for="highResponseTime" class="form-label">High Response Time</label>
-          <select class="form-select" aria-label="High Response Time select example" id="highResponseTime">
-            <option selected value="01">--Select--</option>
-            <option value="lastWeek">Last Week</option>
-            <option value="oneMonth">One Month</option>
-            <option value="customDates">Custom Date</option>
-          </select>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 pb-3">
-          <label for="todaySelect" class="form-label">Today</label>
-          <select class="form-select" aria-label="Default select example" id="todaySelect">
-            <option selected value="today">Today</option>
-            <option value="lastWeek">Last Week</option>
-            <option value="oneMonth">One Month</option>
-            <option value="customDates">Custom Date</option>
-          </select>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 pb-3">
-          <label for="fromdatepicker" class="form-label">From Date</label>
-          <div class="input-group">
-            <div class="input-group">
-              <input type="text" class="form-control rounded-start datepicker" placeholder="DD-MM-YYYY">
-              <span class="input-group-text">
-                <i class="fas fa-calendar-alt"></i>
-              </span>
-            </div>
+        <!-- Captcha section -->
+        <section class="d-flex gap-3 align-items-center">
+          <div>
+            <input type="text" class="form-control text-center text-decoration-line-through" type="text"
+              placeholder="7Xac2n" aria-label="captcha" id="CaptchaCode" disabled
+              style="font-weight: 500; letter-spacing: 3px;">
           </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 pb-3">
-          <label for="todatepicker" class="form-label">To Date</label>
-          <div class="input-group">
-            <input type="text" class="form-control rounded-start datepicker" placeholder="DD-MM-YYYY">
-            <span class="input-group-text">
-              <i class="fas fa-calendar-alt"></i>
-            </span>
+          <div>
+            <button type="button" class="btn"><i class="fa-solid fa-arrows-rotate fa-2xl"></i></button>
           </div>
+          <div>
+            <input class="form-control" type="text" id="CaptchaFill" placeholder="Captcha" aria-label="captcha"
+              autocomplete="off" required>
+          </div>
+        </section>
+        <!-- Submit button -->
+        <div class="d-grid">
+          <button class="btn btn-pink" type="button">Button</button>
         </div>
-        <div class="col-md-3 col-sm-6 col-12 pb-3 align-items-end d-flex">
-          <button class="btn btn-blue btn-full" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Submit</button>
-        </div>
-      </section>
-      <section class="row m-1 mt-3">
-
-      </section>
-    </section>
+      </form>
+    </div>
   </main>
-  <!-- Main Section End -->
 
+  <!-- Footer section -->
+  <footer class="bg-white">
+    <div class="row container mx-auto">
+      <!-- Footer logo for small screens -->
+      <div class="col-md-4 d-md-none d-block text-center">
+        <img src="assets/images-icons/Telangana_Police_Logo.png" alt="ts-police-logo" width="80">
+      </div>
+      <!-- Footer text and link -->
+      <div class="col-md-4 col-12 pt-md-3">
+        <p class="text-center mb-0 py-2">
+          <span>Powered by</span>
+          <br>
+          <span class="login-link"><a href="/">Hyderabadpolice.cgg.gov.in</a></span>
+        </p>
+      </div>
+      <!-- Footer logo for large screens -->
+      <div class="col-md-4 d-none d-md-block text-center">
+        <img src="assets/images-icons/Telangana_Police_Logo.png" alt="ts-police-logo" width="80">
+      </div>
+      <!-- Technology partner information -->
+      <div class="col-md-4 col-12 pt-md-3">
+        <p class="text-center mb-0 py-2">
+          <span>Technology Partner</span>
+          <br>
+          <span class="login-link"><a href="/">Winc IT Services</a></span>
+        </p>
+      </div>
+    </div>
+  </footer>
 
-  <!-- Popper version 2.11.8 -->
+  <!-- JavaScript for Popper.js, necessary for Bootstrap's dropdowns and tooltips -->
   <script src="js/popper.min.js"></script>
-  <!-- Bootstrap JS version 5.3.3 -->
+  <!-- JavaScript for Bootstrap's interactive components (e.g., modals, carousels) -->
   <script src="js/bootstrap.min.js"></script>
-  <!-- Flatpickr JS -->
+  <!-- JavaScript for Flatpickr, a lightweight date picker library -->
   <script src="js/flatpickr.js"></script>
-  <!-- Custom JS -->
+  <!-- Custom JavaScript for additional functionality and interactions -->
   <script src="js/script.js"></script>
 </body>
 

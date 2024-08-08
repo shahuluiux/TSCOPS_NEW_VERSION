@@ -95,7 +95,8 @@ body {
 }
 
 .login-main {
-  height: 360px;
+  height: 300px;
+  margin-bottom: 3rem;
 }
 
 .otp-main {
