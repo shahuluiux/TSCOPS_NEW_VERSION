@@ -5,59 +5,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TSCOP</title>
-  <!-- Bootstrap CSS version 5.3.3 -->
+  <!-- Bootstrap CSS for styling -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awsome Icon -->
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="assets/fontawesome-free-6.6.0-web/css/all.min.css" />
-  <!-- Flatpickr CSS -->
+  <!-- Flatpickr CSS for date picker -->
   <link href="css/flatpickr.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
+  <!-- Custom CSS for additional styling -->
   <link href="css/style.css" rel="stylesheet">
-  <!-- Font Family -->
+  <!-- Google Fonts preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Custom font styles -->
   <link href="css/fonts.css" rel="stylesheet">
-  <!-- Meta Tags -->
+  <!-- Favicon for the website -->
   <link rel="icon" type="ico" href="favicon.ico">
+  <!-- Meta description for SEO -->
   <meta name="description"
     content="TSCOP app allows police officers to access crime and criminal databases, match images of people taken during patrols and includes an integrated facial recognition system to identify criminals, unidentified bodies at crime scenes or missing children.">
 </head>
 
 <body class="login-body">
 
-  <!-- Login Header -->
+  <!-- Header section with logo -->
   <header class="login-header d-flex justify-content-center align-items-center">
     <img src="assets/images-icons/tscop_logo.png" alt="TSCOP Logo" width="120x" height="120x" />
   </header>
+
+  <!-- Main container for OTP verification page -->
   <main class="otp-main p-2 d-flex justify-content-center align-items-center">
+    <!-- Container for the OTP content -->
     <div class="otp-container">
+
+      <!-- Header section with background and icon -->
       <div class="bg-blue-200 py-2 justify-content-center d-flex flex-column align-items-center gap-2"
         style="border-radius: 8px 8px 0px 0px;">
+        <!-- Security icon -->
         <div class="p-2 bg-white rounded-circle" style="width: 64px; height: 64px;">
-          <img src="assets/images-icons/shield.png" alt="Secuqity icon" width="48" height="48" class="p-1">
+          <img src="assets/images-icons/shield.png" alt="Security icon" width="48" height="48" class="p-1">
         </div>
+        <!-- Title for OTP verification -->
         <h1 class="fs-5 text-center text-white"> OTP Verification</h1>
       </div>
+
+      <!-- Form for OTP input and actions -->
       <form action="" class="row gap-3 p-4">
+        <!-- Notification of the OTP sent -->
         <p class="mb-0 text-center">OTP has been sent to ******6532</p>
+
+        <!-- Input field for the OTP code -->
         <div class="col-12">
-          <input class="form-control" type="text" placeholder="OTP Code" aria-label="OTP Code" autocomplete="off"
-            required>
+          <input class="form-control" type="text" id="OTPCode" placeholder="OTP Code" aria-label="OTP Code"
+            autocomplete="off" required>
         </div>
+
+        <!-- Instructions for resending the OTP if not received -->
         <p class="mb-0 text-center">Don't get code? <a href="/" class="login-link">ReSend</a></p>
+
+        <!-- Countdown for the next resend option -->
         <p class="mb-0 text-center">Resend in 50 seconds.</p>
+
+        <!-- Action buttons for canceling or validating the OTP -->
         <div class="d-flex justify-content-between">
+          <!-- Button to cancel the OTP verification process -->
           <button class="btn btn-secondary px-4" type="button">Cancel</button>
+          <!-- Button to validate the entered OTP -->
           <button class="btn btn-pink float-right px-4" type="button">Validate</button>
         </div>
       </form>
     </div>
   </main>
+
+  <!-- Footer section -->
   <footer class="bg-white">
     <div class="row container mx-auto">
+      <!-- Footer logo for small screens -->
       <div class="col-md-4 d-md-none d-block text-center">
         <img src="assets/images-icons/Telangana_Police_Logo.png" alt="ts-police-logo" width="80">
       </div>
+      <!-- Footer text and link -->
       <div class="col-md-4 col-12 pt-md-3">
         <p class="text-center mb-0 py-2">
           <span>Powered by</span>
@@ -65,9 +91,11 @@
           <span class="login-link"><a href="/">Hyderabadpolice.cgg.gov.in</a></span>
         </p>
       </div>
+      <!-- Footer logo for large screens -->
       <div class="col-md-4 d-none d-md-block text-center">
         <img src="assets/images-icons/Telangana_Police_Logo.png" alt="ts-police-logo" width="80">
       </div>
+      <!-- Technology partner information -->
       <div class="col-md-4 col-12 pt-md-3">
         <p class="text-center mb-0 py-2">
           <span>Technology Partner</span>
@@ -78,15 +106,13 @@
     </div>
   </footer>
 
-  <!-- Main Section End -->
-
-  <!-- Popper version 2.11.8 -->
+  <!-- JavaScript for Popper.js, necessary for Bootstrap's dropdowns and tooltips -->
   <script src="js/popper.min.js"></script>
-  <!-- Bootstrap JS version 5.3.3 -->
+  <!-- JavaScript for Bootstrap's interactive components (e.g., modals, carousels) -->
   <script src="js/bootstrap.min.js"></script>
-  <!-- Flatpickr JS -->
+  <!-- JavaScript for Flatpickr, a lightweight date picker library -->
   <script src="js/flatpickr.js"></script>
-  <!-- Custom JS -->
+  <!-- Custom JavaScript for additional functionality and interactions -->
   <script src="js/script.js"></script>
 </body>
 

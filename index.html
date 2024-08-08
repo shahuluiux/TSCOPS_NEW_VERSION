@@ -32,44 +32,45 @@
     <img src="assets/images-icons/tscop_logo.png" alt="TSCOP Logo" width="120x" height="120x" />
   </header>
 
-  <!-- Main login form section -->
-  <main class="login-main p-2 d-flex justify-content-center align-items-center">
-    <div class="login-container">
-      <form action="" class="row px-2 gap-4">
-        <!-- Username input field -->
-        <div class="input-group flex-nowrap col-12">
-          <span class="input-group-text" id="addon-wrapping">
-            <i class="fa-solid fa-user"></i>
-          </span>
-          <input type="text" class="form-control" placeholder="User Name" aria-label="User Name"
-            aria-describedby="addon-wrapping" id="UserName" autocomplete="off" required>
+  <!-- Main container for OTP verification page -->
+  <main class="otp-main p-2 d-flex justify-content-center align-items-center">
+    <!-- Container for the OTP content -->
+    <div class="otp-container">
+
+      <!-- Header section with background and icon -->
+      <div class="bg-blue-200 py-2 justify-content-center d-flex flex-column align-items-center gap-2"
+        style="border-radius: 8px 8px 0px 0px;">
+        <!-- Security icon -->
+        <div class="p-2 bg-white rounded-circle" style="width: 64px; height: 64px;">
+          <img src="assets/images-icons/shield.png" alt="Security icon" width="48" height="48" class="p-1">
         </div>
-        <!-- Password input field -->
-        <div class="input-group flex-nowrap col-12">
-          <span class="input-group-text" id="addon-wrapping">
-            <i class="fa-solid fa-lock"></i>
-          </span>
-          <input type="password" class="form-control" placeholder="Password" aria-label="Password"
-            aria-describedby="addon-wrapping" id="UserPassword" autocomplete="off" required>
+        <!-- Title for OTP verification -->
+        <h1 class="fs-5 text-center text-white"> OTP Verification</h1>
+      </div>
+
+      <!-- Form for OTP input and actions -->
+      <form action="" class="row gap-3 p-4">
+        <!-- Notification of the OTP sent -->
+        <p class="mb-0 text-center">OTP has been sent to ******6532</p>
+
+        <!-- Input field for the OTP code -->
+        <div class="col-12">
+          <input class="form-control" type="text" id="OTPCode" placeholder="OTP Code" aria-label="OTP Code"
+            autocomplete="off" required>
         </div>
-        <!-- Captcha section -->
-        <section class="d-flex gap-3 align-items-center">
-          <div>
-            <input type="text" class="form-control text-center text-decoration-line-through" type="text"
-              placeholder="7Xac2n" aria-label="captcha" id="CaptchaCode" disabled
-              style="font-weight: 500; letter-spacing: 3px;">
-          </div>
-          <div>
-            <button type="button" class="btn"><i class="fa-solid fa-arrows-rotate fa-2xl"></i></button>
-          </div>
-          <div>
-            <input class="form-control" type="text" id="CaptchaFill" placeholder="Captcha" aria-label="captcha"
-              autocomplete="off" required>
-          </div>
-        </section>
-        <!-- Submit button -->
-        <div class="d-grid">
-          <button class="btn btn-pink" type="button">Button</button>
+
+        <!-- Instructions for resending the OTP if not received -->
+        <p class="mb-0 text-center">Don't get code? <a href="/" class="login-link">ReSend</a></p>
+
+        <!-- Countdown for the next resend option -->
+        <p class="mb-0 text-center">Resend in 50 seconds.</p>
+
+        <!-- Action buttons for canceling or validating the OTP -->
+        <div class="d-flex justify-content-between">
+          <!-- Button to cancel the OTP verification process -->
+          <button class="btn btn-secondary px-4" type="button">Cancel</button>
+          <!-- Button to validate the entered OTP -->
+          <button class="btn btn-pink float-right px-4" type="button">Validate</button>
         </div>
       </form>
     </div>
